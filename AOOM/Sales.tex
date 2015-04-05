@@ -1,0 +1,165 @@
+%
+% Sales.tex
+%
+% Aleph Objects Operations Manual
+%
+% Copyright (C) 2014 Aleph Objects, Inc.
+%
+% This document is licensed under the Creative Commons Attribution 4.0
+% International Public License (CC BY-SA 4.0) by Aleph Objects, Inc.
+%
+
+\section{Quotes}
+
+\subsection{Creating a new Quote}
+A quotation is a draft document that captures customer’s interest in the company’s products. In this state, the document may be changed any number of times and / or cancelled.
+\begin{enumerate}
+\item From Sales/Sales/Quotations, create a new quotation.
+  \begin{enumerate}
+  \item Alternately, the lead-opportunity process may have created a quotation already. In that scenario, open that quotation for the next step.
+  \end{enumerate}
+\item Select customer. If there are separate addresses for invoicing and delivery, choose them.
+\item Provide customer reference (e.g. PO02533, phone reference, etc.).
+\item For government or educational institutions, select “Govt/Educational Institutions (USD)” pricelist.
+\item Define terms and conditions if any.
+\item Select products for the Order lines tab. Define quantity, adjust unit price, set discount.
+\item Switch to Other Information tab.
+  \begin{enumerate}
+  \item Set Incoterm. Default is EX WORKS for orders transferred from ecommerce site (Ubercart). Change to “Delivered At Place” for orders that will be invoiced for billing. Change to “Delivered Duty Paid” for orders processed through Fedex IPD.
+  \item Invoicing terms: Default is “On Delivery Order.” Change this to “On Demand” for international orders. This change will allow generation of Proforma Invoice before delivery.
+  \item Select payment term – relevant for non-web orders
+  \item Select Fiscal Position – Tax terms as applicable [This will probably change with Avalara module]
+  \end{enumerate}
+\item Save the quotation
+\item Print the quotation if required.
+\end{enumerate}
+
+\subsection{Confirming the Quote}
+This step confirms the customer’s intent to buy. Confirmation generates a series of stock moves and other documents in OpenERP. The sale order (the quotation becomes a sale order on confirmation) cannot be cancelled without the associated delivery order and invoice (if any) cancelled. Changes are allowed only on the text fields – no quantity, price, customer, address, terms info may be changed after confirmation.
+\begin{enumerate}
+\item Identify the quotation from Sales/Sales/Quotations by searching on the customer name or by quotation number.
+\item Verify the contents of the quotation and ensure its completeness (refer to Creating the Quote steps).
+\item Press “Confirm Sale” button to confirm the quotation. 
+\item The sale order is created. From this time, this order will be seen under Sales/Sales/Sales Orders.
+\item Print the sale order to send to customer / email the document directly – this step requires the customer’s email in OpenERP. If not the user will be prompted to enter one. 
+\item If the order is international, press the create invoice button to create a draft invoice.
+\end{enumerate}
+
+\section{Orders}
+
+\subsection{Delivering the Order}
+Once the sale order is confirmed, a delivery order is created. This lets the warehouse person know what to ship and where. Additionally, the warehouse person may generate the customer invoice depending on the invoice creation mode.
+\subsubsection{OpenERP Sales}
+\begin{enumerate}
+\item The items pending delivery can be viewed from Warehouse/Receive/Deliver By Orders/Delivery Orders. 
+  \begin{enumerate}
+  \item The status of the delivery orders will be one of Ready, Waiting, Back Orders, and To Invoice. 
+    \begin{enumerate}
+    \item Ready: These are orders that can be fulfilled immediately.
+    \item Waiting: These orders are waiting for one or more items in the order.
+    \item Back Orders: These orders are partial delivery pending from a previous order. Note that the partial delivery is based on quantities not fulfilled when they could have been.
+    \item To Invoice: These orders are waiting for the warehouse person to generate invoice. This state will be shown on orders that originated from sale orders that have invoice method as “On Delivery Order.”
+    \end{enumerate}
+  \item Additional search conditions may be defined based on delivery order number of source document number – which in this case is the sale order number.
+  \end{enumerate}
+\item Select the delivery order.
+\item Record additional information in the internal notes section – tracking number, shipper notes, etc.
+\item If the delivery is international, the proforma invoice needs to be printed before the delivery order can be processed.
+  \begin{enumerate}
+  \item Go to the sale order associated with the delivery order. The invoice method on this sale order must be “On Demand.”
+  \item Generate the customer draft invoice if not generated already.
+  \item Open the invoice by clicking on the “View invoice.”
+    \begin{enumerate}
+    \item Click on Proforma to set the invoice in the proforma state
+    \item Print the invoice and it will read “Proforma Invoice.”
+    \end{enumerate}
+  \item Attach the proforma invoice to the delivery order and enclose a copy of it to the delivery package.
+  \end{enumerate}
+\item Click on deliver to complete the delivery order.
+\end{enumerate}
+
+\subsubsection{Web Sales}
+\begin{enumerate}
+\item The invoice method should be set to On Demand in the sale order associated with these sales.
+\item The warehouse person reviews the delivery order and confirms the delivery of goods for the order from Shipwire.
+\item If not all items have been shipped from Shipwire, the delivery order will be kept pending until all items in the order are delivered.
+\item If Shipwire has fulfilled the order, the delivery order can be updated to reflect this information (tracking number, etc.) and marked delivered by clicking on “Deliver” button. The source location in the delivery order line must be set to the appropriate location (Shipwire location or AM location).
+\end{enumerate}
+
+\subsection{Generating Customer Invoice}
+\subsubsection{Web Sales}
+Web Sales: These are sales for which payments have been received through credit card on the shopping cart (Ubercart). Currently, these orders are being keyed in from Ubercart. Once the sale order is created in OpenERP (Invoice method = On Demand, Incoterms=EX Works), the invoice must be created and payment processed.
+\begin{enumerate}
+\item Confirm the sale order.
+\item Create the draft invoice (Note: this method is used for all web sales and OpenERP sales that are international shipment)
+\item Validate the invoice and get it ready for payment.
+\end{enumerate}
+
+\subsubsection{OpenERP Sales}
+OpenERP Sales: These are sales that are entered in OpenERP (phone sales, local sales, institutional sales, donations, etc.) The invoice method must be set to “On Delivery Order” and Incoterms must be set to “Delivered at Place” for non IPD shipments, and “Delivered Duty Paid” for IPD shipments. For sales that are paid through Credit Card or international shipments, set the invoice method to “On Demand.”
+\begin{enumerate}
+\item Confirm the sale order.
+\item If payment has been received through Paypal/Credit card or for international shipments, create draft invoice.
+\item For international shipments, set invoice state to Proforma and print it out.
+\item For institutional and other orders that will be invoiced on delivery, follow delivery process to create the invoice.
+\item Validate the invoice and get it ready for payment
+\end{enumerate}
+Note: Setting the correct invoice method is essential for a smooth workflow in the system and among the team.
+
+\section{Accepting Customer Payments}
+
+Record the customer payment when received. If invoice is in draft state, validate the invoice before proceeding with this. Invoices may be paid in two different ways.
+\begin{enumerate}
+\item Click on Pay in the invoice. This allows payment to be recorded against the invoice.
+  \begin{enumerate}
+\item Enter the payment amount and pick the correct journal to record.
+\item Complete payment.
+\item Note: The payment amount if not in full will result in the invoice not marked “Paid.”
+\item The balance due from the customer will be tracked.
+  \end{enumerate}
+\item Use Customer Payments to record the payment. This method brings up all pending payments due from the customer for payment.
+  \begin{enumerate}
+\item Select the customer.
+\item All the payments due from and to customer are listed in the Credits/Debits section.
+\item Record the paid amount.
+\item This amount will automatically be reconciled against pending payments and if completely adjusted, “Full Reconcile” flag will be checked against the credit records. If payment is not sufficient to fully reconcile against the dues, it will be adjusted against the first / latest due.
+  \end{enumerate}
+\end{enumerate}
+
+\subsection{Notes}
+\begin{enumerate}
+\item Record conversations with the customer during the negotiation if any along with the sales order using “Log a Note” feature. If the information needs to reach the customer then the “Send Message” option should be used.
+\item Once the sales order is confirmed the only changes allowed are to the text fields. The customer, pricing details, product details are frozen and cannot be changed. Please review all the options before confirming the SO.
+\item Make sure to set the right payment term for the customer (Immediate payment for web sales and NET30 or as the case may be for other orders) as this will be used for aging analysis.
+\end{enumerate}
+
+\section{Value Chain}
+Everything we do must create value for the customer.
+
+\section{Customers}
+OpenERP ---> Sales ---> Sales ---> Customers
+
+\section{Export Compliance}
+Comply with export.gov. Contact Denver office with any questions we can't
+resolve.
+
+\section{Phones}
+\subsection{Transfer call}
+\begin{enumerate}
+\item Ask the caller if you can transfer them.
+\item Put the call on hold: *2
+\item Dial internal extension number you want to transfer to.
+\item Explain transfer when internal callee answers.
+\item Hang up, and the call will automatically transfer.
+\end{enumerate}
+
+\section{Incoming OpenERP Email}
+The email address \texttt{sales@alephobjects.com} and
+\texttt{sales@lulzbot.com} goes into the OpenERP Sales Leads.
+
+OpenERP ---> Sales ---> Sales ---> Leads
+
+\section{Products}
+
+OpenERP ---> Sales ---> Products ---> Products
+

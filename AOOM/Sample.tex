@@ -1,0 +1,221 @@
+%
+% Sample.tex
+% Sample LaTeX commands, don't rended in final output.
+%
+% Aleph Objects Operations Manual
+%
+% Copyright (C) 2014 Aleph Objects, Inc.
+%
+% This document is licensed under the Creative Commons Attribution 4.0
+% International Public License (CC BY-SA 4.0) by Aleph Objects, Inc.
+%
+
+% Memoir Divisions: \book, \part, \chapter, \section, \subsection
+% Fine divisions:   \subsubsection, \paragraph \subparagraph
+
+\section{Fonts}
+
+\subsection{Latin Modern - lmodern}
+%%% Reset fonts to default
+\fontencoding{\encodingdefault}
+\fontfamily{\familydefault}
+\fontseries{\seriesdefault}
+\fontshape{\shapedefault}
+\selectfont
+%{\usefont{T1}{lmodern}{b}{n}MEOw lmodern}
+
+%\usefont{T1}{lmodern}{b}{n}
+
+%{\usefont{T1}{lmodern}{b}{n}\ttfamily\scshape\slshape MEOw lmodern}
+
+{\usefont{T1}{lmodern}{b}{n}}
+
+
+\begin{itemize}
+%\item \rmdefault Latin Modern Roman
+\item            Latin Modern Roman
+\item \itshape   Latin Modern Roman Italic
+\item \slshape   Latin Modern Roman Oblique
+\item \scshape   Latin Modern Roman Small Caps
+\item \bfseries  Latin Modern Roman Bold Extended
+\item \itshape   Latin Modern Roman Bold Italic Extended
+\item \slshape   Latin Modern Roman Bold Oblique Extended
+\end{itemize}
+
+
+\begin{itemize}
+\item \rmfamily  Latin Modern rmfamily
+\item \sffamily  Latin Modern sffamily
+\item \ttfamily  Latin Modern ttfamily
+\end{itemize}
+
+\begin{itemize}
+\item {\itshape  Latin Modern itshape}
+\item {\slshape  Latin Modern slshape}
+\item {\scshape Latin Modern scshape}
+\end{itemize}
+
+\begin{itemize}
+\bfseries
+\item Latin Modern Roman Bold Extended
+\item \fontseries{b}\selectfont Latin Modern Roman Bold
+\item \fontseries{b}\slshape Latin Modern Roman Bold Oblique
+\end{itemize}
+\begin{itemize}
+\sffamily
+\bfseries
+\item Latin Modern Sans Bold
+\item \fontseries{sbc}\selectfont Latin Modern Sans Demi Condensed
+\item \fontseries{sbc}\slshape Latin Modern Sans Demi Condensed Oblique
+\end{itemize}
+
+\begin{itemize}
+\item \ttfamily Latin Modern Typewriter
+\item \itshape Latin Modern Typewriter Italic
+\item \slshape Latin Modern Typewriter Oblique
+\item \scshape Latin Modern Typewriter Small Caps
+\item \bfseries Latin Modern Typewriter Dark
+\item \slshape Latin Modern Typewriter Dark Oblique
+\end{itemize}
+
+% These fonts may be available in Debian texlive without having to install
+% them separately: http://www.tug.dk/FontCatalogue/
+
+% \fontencoding %%% This document uses LY1
+% \fontfamily   %%% The font family.
+% \fontseries   %%% The series: l=light, m=medium, b=bold, bx=very bold.
+% \fontshape    %%% The shape: it=italic, n=normal, sl=slanted, sc=small capitals.
+% Example: \fontencoding{T1}\fontfamily{anttlc}\fontseries{m}\fontshape{n}\selectfont
+
+Samples
+
+\subsection{text commands}
+% \mdseries      \textmd      Medium Series
+% \bfseries      \textbf      Boldface Series
+
+% \rmfamily      \textrm      Roman Family
+% \sffamily      \textsf      Sans Serif Family
+% \ttfamily      \texttt      Typewrite Family
+
+% \upshape       \textup      Upright Shape
+% \itshape       \textit      Italic Shape
+% \slshape       \textsl      Slanted Shape
+% \scshape       \textsc      Small Caps Shape
+% \normalfont    \textnormal  Normal Style 
+
+\textnormal{This is textnormal }
+
+\textmd{This is textmd Medium Series}
+
+\textbf{This is textbf Boldface Series}
+
+\textrm{This is textrm Roman Family}
+
+\textsf{This is textsf Sans Serif Family}
+
+\texttt{This is texttt Typewrite Family}
+
+\textup{This is textup Upright Shape}
+
+\textit{This is textit Italic Shape}
+
+\textsl{This is textsl Slanted Shape}
+
+\textsc{This is textsc Small Caps Shape}
+
+
+\subsection{Font sizes}
+
+%\fontsize{<size>}{<line space>} 
+{\usefont{LY1}{Outage-TLF}{m}{n}\fontsize{20pt}{1em}\selectfont Outage Font 20 pt}
+
+{\usefont{LY1}{Outage-TLF}{m}{n}\fontsize{40pt}{1em}\selectfont Outage Font 40 pt
+
+Moar}
+
+\textnormal{textnormal}
+
+\subsection{Font effects}
+
+\emph{This is emphasized = emph}
+
+\uline{This is underlined = uline}
+
+\uwave{This is wavy underlined = uwave}
+
+\sout{This is strikeout = sout}
+
+\xout{This is x-out = xout}
+
+less
+
+\subsection{Font sizes}
+
+{\fontsize{28pt}{1em}\selectfont ABCDE abcde Default Font 28 pt}
+
+{\usefont{LY1}{libertine}{m}{n}\fontsize{28pt}{1em}\selectfont ABCDE abcde Libertine Font 28 pt}
+
+\par
+
+{\usefont{T1}{DejaVuSans-TLF}{m}{n}\fontsize{14pt}{1em}\selectfont ABCDE abcde DejaVuSans-TLF Font 14 pt}
+
+%{\usefont{LY1}{dejavu}{m}{n}\fontsize{28pt}{1em}\selectfont ABCDE abcde DejaVu Font 28 pt}
+
+\par
+
+
+\subsection{Font faces}
+
+{\usefont{LY1}{Outage-TLF}{m}{n}Outage Font} % Outage is LULZBOT font
+
+{\usefont{LY1}{Montserrat-TLF}{m}{n}Monserrat Font} % Montserrat is AO "Incorporated" font
+
+\textnormal{This is textnormal again}
+
+{\usefont{T1}{DejaVuSerif-TLF}{m}{n}ABC abc DEF def DejaVuSerif-TLF}\par
+
+{\usefont{T1}{DejaVuSans-TLF}{m}{n}ABC abc DEF def DejaVuSans-TLF}\par
+
+{\usefont{T1}{DejaVuSerifCondensed-TLF}{m}{n}ABC abc DEF def DejaVuSerifCondensed-TLF}\par
+
+{\usefont{T1}{DejaVuSansCondensed-TLF}{m}{n}ABC abc DEF def DejaVuSansCondensed-TLF}\par
+
+{\usefont{T1}{DejaVuSansMono-TLF}{m}{n}ABC abc DEF def DejaVuSansMono-TLF}\par
+
+{\usefont{T1}{pcr}{m}{n}\fontsize{12pt}{1em}\selectfont ABC abc DEF def courier (pcr)}\par
+
+% For the list of dingbats, see Memoir manual "Glyphs in the LaTeX distributed Zapf Dingbat font"
+{\usefont{T1}{pzd}{m}{n}\fontsize{12pt}{1em}\selectfont pzd (zapf dingbats) \ding{43} \ding{46} \ding{51} \ding{53} \ding{54} \ding{80} \ding{111} \ding{172}   }\par
+
+{\usefont{T1}{calligra}{m}{n}\fontsize{20pt}{1em}\selectfont ABC abc DEF def calligra}\par
+
+{\usefont{T1}{frcursive}{m}{n}\fontsize{20pt}{1em}\selectfont\textcursive{ABC abc DEF def frcursive}}\par
+% \textcursive
+
+
+
+ABC abc DEFFFFF\par
+
+%%% Reset fonts to default
+\fontencoding{\encodingdefault}
+\fontfamily{\familydefault}
+\fontseries{\seriesdefault}
+\fontshape{\shapedefault}
+\selectfont
+
+\section{Commands}
+This section shows you are to make custom commands.
+
+\newcommand{\testcmd}[2]{Show two variables: {#1} {#2}}
+\testcmd{17}{932}
+
+\newcommand{\anothertestcmd}[3]{Show three variables: {#1} {#2} {#3}}
+\anothertestcmd{3114}{99}{0976}
+
+%\usefont{T1}{DejaVuSerif-TLF}{m}{n}
+
+
+
+
+%\index{meow}\glossary{Meow}{meow meow, meow}
+

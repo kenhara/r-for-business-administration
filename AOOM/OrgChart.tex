@@ -1,0 +1,60 @@
+%
+% OrgChart.tex
+% HR Organizational Chart
+%
+% Aleph Objects Operations Manual
+%
+% Copyright (C) 2014 Aleph Objects, Inc.
+%
+% This document is licensed under the Creative Commons Attribution 4.0
+% International Public License (CC BY-SA 4.0) by Aleph Objects, Inc.
+
+\begin{sidewaysfigure}[p]
+\thisfloatpagestyle{empty}
+\begin{center}
+\resizebox{\textwidth}{!}
+{
+\begin{forest}
+for tree={
+  draw,
+  minimum height=3cm,
+  anchor=north,
+  align=center,
+  child anchor=north,
+  inner sep=5mm,
+  s sep=5mm
+},
+[{CEO}, align=center, for tree={rectangle}, fill=ao-purple, tier=first
+    [{CTO}, for tree={fill=pink}, tier=second, child anchor=east
+        [{Engineer\\Assistant}, tier=third
+            [{Cluster\\Tech}, tier=fourth]
+            [{Cluster\\Tech}, tier=fourth]
+        ]
+        [{Engineer\\Assistant}, tier=third]
+      [{VP Mfg}, for tree={fill=ao-light-orange}, tier=third
+            [{Assembly\\Lead}, for tree={fill=ao-light-orange}, tier=fourth
+                [{Assembly\\I}, tier=fifth]
+                [{Assembly\\I}, tier=fifth]
+                [{Assembly\\II}, tier=fifth]
+                [{Assembly\\II}, tier=fifth]
+                [{Assembly\\II}, tier=fifth]
+                [{Assembly\\II}, tier=fifth]
+            ]
+        ]
+    ]
+    [{Bookkeeper}, fill=ao-gold], tier=second
+    [{SysAdmin}, fill=ao-dark-blue], tier=second
+    [{COO}, for tree={fill=ao-light-blue}, tier=second child anchor=west
+        [{Shipping\\Manager}, tier=third]
+        [{Sales\\Manager}, tier=third]
+        [{Programmer}, tier=third]
+        [{Comms}, tier=third]
+        [{CSR}, tier=third]
+    ]
+]
+\end{forest}
+}
+\end{center}
+\caption{Organizational Chart}
+ \label{fig:ao_org_chart}
+\end{sidewaysfigure}
