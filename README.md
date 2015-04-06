@@ -17,6 +17,6 @@ The AOOM document source code is available at these locations:
 
 * http://devel.alephobjects.com/ao/documentation/AOOM/
 
-* https://github.com/jebba/AOOM
+* https://github.com/alephobjects/AOOM
 
 * https://www.sharelatex.com/project/530905c45bdef00b69001e69
