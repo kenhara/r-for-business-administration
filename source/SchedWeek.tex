@@ -11,7 +11,7 @@
 %
 
 % To extract just the schedule pages from the PDF, run something like:
-% pdfjoin AOOM.pdf 31-32 -o AOOM-schedule.pdf
+% pdfjoin AOOM.pdf 37 -o AOOM-schedule.pdf
 
 % These set the width of a day and the height of an hour.
 \newcommand*\daywidth{3.7cm}
@@ -78,33 +78,36 @@
     %\node[entry={DURATION}{COLUMN WIDTH?}] at (DAY,HOUR) {TEXT};
     \node[anchor=north] at (1.5,6.5) {Monday};
     \node[entry={0.5}{1}] at (1,7) {New Employee};
-    \node[entry={1.0}{1}] at (1,9) {Manufacturing \& Materials};
-    \node[entry={0.5}{1}] at (1,10){Sales};
-    \node[entry={0.5}{1}] at (1,11) {Finance};
+    \node[entry={1.5}{1}] at (1,9) {Manufacturing \& Materials};
+    \node[entry={1.0}{1}] at (1,10.5){Sales};
+    \node[entry={0.5}{1}] at (1,11.5) {Finance};
     \node[entry={0.5}{1}] at (1,13) {Shipping};
-    \node[entry={0.5}{1}] at (1,14) {CSR};
+    \node[entry={0.5}{1}] at (1,13.5) {Web Status};
     \node[entry={0.5}{1}] at (1,14.5) {Retail Purchasing};
 
     % Tuesday
     \node[anchor=north] at (2.5,6.5) {Tuesday};
+    \node[entry={2.0}{1}] at (2,8) {Interviews};
+    \node[entry={0.5}{1}] at (2,14) {CSR};
     
     % Wednesday
     \node[anchor=north] at (3.5,6.5) {Wednesday};
-    \node[entry={1.0}{1}] at (3,8) {Mini Dev};
+    \node[entry={1.0}{1}] at (3,8) {R \& D};
     \node[entry={0.5}{1}] at (3,10) {Cluster};
     \node[entry={0.5}{1}] at (3,10.5) {IT};
     \node[entry={0.5}{1}] at (3,11) {Facility};
-    \node[entry={1.0}{1}] at (3,13) {Marketing};
-    \node[entry={1.0}{1}] at (3,14) {NPI / R\&D};
+    \node[entry={1.5}{1}] at (3,13) {Marketing};
+    \node[entry={1.0}{1}] at (3,14.5) {NPI};
     
     % Thursday
     \node[anchor=north] at (4.5,6.5) {Thursday};
-    \node[entry={5.0}{1}] at (4,9) {Interviews \& Reviews};
-    \node[entry={0.5}{1}] at (4,15) {HR};
+    \node[entry={5.0}{1}] at (4,8) {Interviews \& Reviews};
+    \node[entry={0.5}{1}] at (4,13) {HR};
+    \node[entry={0.5}{1}] at (4,13.5) {PEO Call};
+    \node[entry={0.5}{1}] at (4,14) {Web Working};
     
     % Friday
     \node[anchor=north] at (5.5,6.5) {Friday};
-    \node[entry={0.5}{1}] at (5,9) {Web Dev};
     \node[entry={0.5}{1}] at (5,13) {Software Dev};
     \node[entry={1.0}{1}] at (5,14) {Public Tours};
 
