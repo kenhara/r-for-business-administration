@@ -31,18 +31,28 @@
   day text={\%d=},rounded corners=0,anchor=base,text height=1ex,text depth=-0.5ex]
 \holidays;}
 
+% Company Holidays 2015:
+% New Year's Day 2015-01-01 - Thursday
+% Memorial Day 2015-05-25 - Monday
+% Independence Day 2015-07-04 - Saturday
+% Labor Day - 2015-09-07 - Monday
+% Thanksgiving Day - 2015-11-26 - Thursday
+% Day after Thanksgiving - 2015-11-27 - Friday
+% Christmas - 2015-12-25 - Friday
+
+% Company meetings, the first business day of the month at 8AM, for 2015.
 \newcommand{\holidays}{
 if (equals=01-02) {\node [fill=yellow,draw,star] {};}
-if (equals=02-03) {\node [fill=yellow,draw,star] {};}
-if (equals=03-03) {\node [fill=yellow,draw,star] {};}
+if (equals=02-02) {\node [fill=yellow,draw,star] {};}
+if (equals=03-02) {\node [fill=yellow,draw,star] {};}
 if (equals=04-01) {\node [fill=yellow,draw,star] {};}
 if (equals=05-01) {\node [fill=yellow,draw,star] {};}
-if (equals=06-02) {\node [fill=yellow,draw,star] {};}
+if (equals=06-01) {\node [fill=yellow,draw,star] {};}
 if (equals=07-01) {\node [fill=yellow,draw,star] {};}
-if (equals=08-01) {\node [fill=yellow,draw,star] {};}
+if (equals=08-03) {\node [fill=yellow,draw,star] {};}
 if (equals=09-01) {\node [fill=yellow,draw,star] {};}
 if (equals=10-01) {\node [fill=yellow,draw,star] {};}
-if (equals=11-03) {\node [fill=yellow,draw,star] {};}
+if (equals=11-02) {\node [fill=yellow,draw,star] {};}
 if (equals=12-01) {\node [fill=yellow,draw,star] {};}
 }
 
