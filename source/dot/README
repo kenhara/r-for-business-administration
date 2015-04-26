@@ -1,1 +1,0 @@
-fdp -o ao-orgchart-dot.png -Tpng ao-orgchart.dot
