@@ -77,7 +77,7 @@
     % 1=Monday, 2=Tuesday, 3=Wednesday, 4=Thursday, 5=Friday
     %\node[entry={DURATION}{COLUMN WIDTH?}] at (DAY,HOUR) {TEXT};
     \node[anchor=north] at (1.5,6.5) {Monday};
-    \node[entry={0.5}{1}] at (1,7) {New Employee};
+    \node[entry={0.5}{1}] at (1,7) {New Employees};
     \node[entry={1.5}{1}] at (1,9) {Manufacturing \& Materials};
     \node[entry={1.0}{1}] at (1,10.5){Sales};
     \node[entry={0.5}{1}] at (1,11.5) {Finance};
@@ -114,6 +114,9 @@
 
 \end{tikzpicture}
 \caption{Weekly Company Meetings}
+\renewcommand{\dateseparator}{}
+\hfill\texttt{v.\yyyymmdddate\today-\currenttime} % Timestamp build date
+
  \label{fig:ao_week_meet}
 \end{sidewaysfigure}
 
