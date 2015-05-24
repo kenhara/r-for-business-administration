@@ -82,7 +82,7 @@ The CentOS server at Tummy.
 \item \texttt{belly1.alephobjects.com} --- Tummy Backup server.
 \end{itemize}
 
-\section{Services}
+\section{Public Services}
 \subsection{Public URLs}
 \begin{itemize}
 \item \url{https://www.alephobjects.com} --- Main Aleph Objects website.
@@ -102,6 +102,7 @@ The CentOS server at Tummy.
        and development archives.
 \end{itemize}
 
+\section{Employee Services}
 \subsection{Employee URLs}
 These are URLs that are for Aleph Objects employees.
 
@@ -115,46 +116,85 @@ These are URLs that are for Aleph Objects employees.
 \item \url{https://wiki.alephobjects.com} --- Development wiki.
 \end{itemize}
 
-\subsection{Server Daemons}
+\section{Server Daemons}
 These are the server daemons used to drive the enterprise.
 
-\begin{itemize}
-\item \href{http://httpd.apache.org/}{Apache} --- Web daemon, used on many
-       servers.
-\item \href{http://www.asterisk.org}{Asterisk} --- Telephone server. DIDs
-       (incoming), termination (outgoing), forwarding of calls, conferencing,
-       voicemail, XMPP.
-\item \href{https://github.com/tummy-dot-com/tummy-backup}{Tummy Backups} --- Backup server.
-\item \href{http://dnsmasq.org/}{dhcpd} --- DHCP for 350+ hosts.
-\item \href{http://dnsmasq.org/}{DNS} --- DNS caching.
-\item \href{http://www.drupal.org}{Drupal} with
-            \href{http://www.ubercart.org/}{UberCart} --- Main LulzBot site.
-\item \href{http://www.ejabberd.im/}{ejabberd} --- Erlang XMPP (jabber) server.
-\item \href{http://www.openbsd.org/faq/pf/}{Firewall} --- OpenBSD's PF.
-\item \href{http://fuse.sourceforge.net/sshfs.html}{sshfs} --- Main internal
-       fileserver.
-\item \href{http://dovecot.org/}{IMAP} --- Employee IMAP incoming mail server.
-\item \href{http://munin-monitoring.org/}{Munin} --- Network graphing.
-\item \href{http://www.mysql.org/}{MySQL} --- Used on many servers for a
-       database.
-\item \href{http://support.ntp.org/}{ntpd} --- Syncs time on every server and
-       workstation.
-\item \href{http://www.odoo.com/}{Odoo} --- Development ERP server, next
-       generation of OpenERP.
-\item \href{http://www.openerp.org/}{OpenERP} --- ERP server.
-\item \href{http://www.openssh.com/}{OpenSSH} --- Used to control every server.
-\item \href{http://openvpn.net/}{OpenVPN} --- Connects external resources,
-       such as employee mobiles and laptops, to the internal network.
-\item \href{http://www.opsview.com/}{Opsview} --- Network monitoring (cf.
-       nagios).
-\item \href{http://community.pentaho.com/}{Pentaho} --- Report server,
-       connects to ERP.
-\item \href{https://www.phpbb.com/}{phpBB} --- User discussion forum.
-\item \href{http://www.postfix.org/}{Postfix} --- SMTP outgoing mail server.
-\item \href{http://www.postgresql.org/}{Postgres} --- Database server.
-\item \href{http://rsync.samba.org/}{rsync} --- File server.
-\item \href{http://dnsmasq.org/}{tftp} --- Network install server.
-\end{itemize}
+\subsection{\href{http://httpd.apache.org/}{Apache}}
+Web daemon, used on many servers.
+
+\subsection{\href{http://www.asterisk.org}{Asterisk}}
+Telephone server. DIDs (incoming), termination (outgoing), forwarding of calls, conferencing,
+voicemail, XMPP.
+
+\subsection{\href{https://github.com/tummy-dot-com/tummy-backup}{Tummy Backups}}
+Backup server.
+
+\subsection{\href{http://dnsmasq.org/}{dhcpd}}
+DHCP for 350+ hosts.
+
+\subsection{\href{http://dnsmasq.org/}{DNS}}
+DNS caching.
+
+\subsection{\href{http://www.drupal.org}{Drupal}}
+Main LulzBot site.
+
+Used with \href{http://www.ubercart.org/}{UberCart}.
+Migrating to Drupal Commerce.
+
+\subsection{\href{http://www.openbsd.org/faq/pf/}{Firewalls}}
+OpenBSD's PF, Linux's iptables.
+
+\subsection{\href{http://fuse.sourceforge.net/sshfs.html}{sshfs}}
+Main internal fileserver.
+
+\subsection{\href{http://dovecot.org/}{IMAP}}
+Employee IMAP incoming mail server.
+
+\subsection{\href{http://munin-monitoring.org/}{Munin}}
+Network graphing.
+
+\subsection{\href{http://www.mysql.org/}{MySQL}}
+Used on many servers for a database.
+
+\subsection{\href{http://support.ntp.org/}{NTP}}
+Syncs time on every server and workstation.
+
+\subsection{\href{http://www.odoo.com/}{Odoo}}
+Development ERP server, next generation of OpenERP.
+
+\subsection{\href{http://www.openerp.org/}{OpenERP}}
+ERP server.
+
+\subsection{\href{http://www.openssh.com/}{OpenSSH}}
+Used to control every server.
+
+\subsection{\href{http://openvpn.net/}{OpenVPN}}
+Connects external resources, such as employee mobiles and laptops, to the internal network.
+
+\subsection{\href{http://www.opsview.com/}{Opsview}}
+Network monitoring (cf. nagios).
+
+\subsection{\href{http://community.pentaho.com/}{Pentaho}}
+Report server, connects to ERP.
+
+\subsection{\href{https://www.phpbb.com/}{phpBB}}
+User discussion forum.
+
+\subsection{\href{http://www.postfix.org/}{Postfix}}
+SMTP outgoing mail server.
+
+\subsection{\href{http://www.postgresql.org/}{Postgres}}
+Database server.
+
+\subsection{\href{http://rsync.samba.org/}{rsync}}
+File server.
+
+\subsection{\href{http://dnsmasq.org/}{TFTP}}
+Network install server.
+
+\subsection{\href{http://www.ejabberd.im/}{XMPP/jabber}}
+ejabberd, Erlang XMPP (jabber) server.
+
 
 \section{3D Printer Cluster}
 There are 144 printers in the 3D printing cluster. One hundred thirty five are
@@ -234,7 +274,7 @@ All workstations run \href{http://www.debian.org/}{Debian} stable (\href{https:/
 \item \href{http://support.ntp.org/}{ntp}
 \end{itemize}
 
-\section{Phones}
+\section{Telephones}
 \subsection{Hard Phones}
 \begin{itemize}
 \item \href{https://www.grandstream.com/products/ip-video-telephony/gxv3140/}{Grandstream GXV3140}
