@@ -11,127 +11,176 @@
 %
 
 \section{Servers}
+In general, the servers are all running the latest stable release of Debian,
+Jessie, version 8, on the amd64 architecture. Some are running Wheezy because
+the daemon they hosts prefers it. There is some Debian Squeeze, which is being
+migrated. The firewalls are OpenBSD. There is one CentOS and one Fedora
+machine.
+
+All machines are backed up at least daily. Updates are run at least weekly,
+sooner depending on the nature of the update.
 
 \subsection{Aleph Mountain Servers}
+This is a list of servers and nodes that are in the Aleph Mountain building.
+
 \begin{itemize}
-\item \texttt{abejas.alephobjects.com}
-\item \texttt{amfw1.alephobjects.com}
-\item \texttt{amfw2.alephobjects.com}
-\item \texttt{aobuild1.alephobjects.com}
-\item \texttt{aocluster1.alephobjects.com}
-\item \texttt{aodb.alephobjects.com}
-\item \texttt{erp.alephobjects.com}
-\item \texttt{jebstation.alephobjects.com}
-\item \texttt{tunk.alephobjects.com}
+\item \texttt{abejas.alephobjects.com} --- Apache, OpenERP
+\item \texttt{amfw1.alephobjects.com} --- OpenBSD, pf
+\item \texttt{amfw2.alephobjects.com} --- OpenBSD, pf
+\item \texttt{aobuild1.alephobjects.com} --- Compile/build server
+\item \texttt{aocluster1.alephobjects.com} --- 3D Printer cluster Botqueue
+       server
+\item \texttt{aodb.alephobjects.com} --- Postgres
+\item \texttt{cam.alephobjects.com} --- Motion
+\item \texttt{jebstation.alephobjects.com} --- sshfs
+\item \texttt{tunk.alephobjects.com} --- apt-cacher, OpenVPN server, dnsmasq
+      (dhcp, dns cache, tftp), MySQL, OpenLDAP
 \end{itemize}
 
 \subsection{3D Printer Servers}
+There are 144 printers in the 3D printing cluster. One hundred thirty five are
+in the main cluster room, nine in the adjoining sample room. The cluster is a
+mix of LulzBot TAZ and LulzBot Minis.
+
+Each printer has a Beaglebone Black (BBB) connected to it via USB. The
+BBB is running Debian (armhf port) and Botqueue. There is a separate Botqueue
+server, also running Debian, that the BBBs connect to, to get print jobs.
+
+The printers are organized in sets, or ``pods'', typically of nine. Each cabinet
+holds nine machines, three wide by three high. Each pod is assigned a letter.
+In the main cluster room, this is A through O. In the sample room, it is pods
+Y and Z which have five and four machines, respectively. Machines are named
+of the format: bbb-a1, bbb-a2, through to bbb-a9 for the first pod. Then the
+next pod starts bbb-b1, through to the end: bbb-z4.
+
 \begin{itemize}
-\item \texttt{bbb-a1.alephobjects.com} through {bbb-a9.alephobjects.com}
-\item \texttt ...
-\item \texttt{bbb-o1.alephobjects.com} through {bbb-o9.alephobjects.com} --- TAZ
-\item \texttt{bbb-y1.alephobjects.com} through {bbb-y5.alephobjects.com} --- Mini
-\item \texttt{bbb-z1.alephobjects.com} through {bbb-z4.alephobjects.com} --- Mini
+\item \texttt{bbb-a1.alephobjects.com} through {bbb-o9.alephobjects.com} --- LulzBot TAZ
+\item \texttt{bbb-y1.alephobjects.com} through {bbb-z4.alephobjects.com} --- LulzBot Mini
 \end{itemize}
 
 \subsection{Test Aleph Mountain Servers}
 \begin{itemize}
-\item \texttt{aogfs1.alephobjects.com}
-\item \texttt{aogfs2.alephobjects.com}
-\item \texttt{aomds1.alephobjects.com}
+\item \texttt{aogfs1.alephobjects.com} --- Potential fileserver
+\item \texttt{aomds1.alephobjects.com} --- Potential db server
 \end{itemize}
 
 \subsection{Virtual Servers Elastichosts Los Angeles}
+These are machines ``in the cloud''.
+
 \begin{itemize}
-\item \texttt{aomail.alephobjects.com}
-\item \texttt{analytics.alephobjects.com}
-\item \texttt{cal.alephobjects.com}
-\item \texttt{drupalsql.lulzbot.com}
-\item \texttt{drupalsqlslave.lulzbot.com}
-\item \texttt{forum.lulzbot.com}
-\item \texttt{jabber.alephobjects.com}
-\item \texttt{ldap.alephobjects.com}
-\item \texttt{ohai-kit.alephobjects.com}
-\item \texttt{ops.alephobjects.com}
-\item \texttt{phplist.alephobjects.com}
-\item \texttt{projects.alephobjects.com}
-\item \texttt{survey.alephobjects.com}
-\item \texttt{thinkup.alephobjects.com}
-\item \texttt{www.lulzbot.com}
-\item \texttt{www.alephobjects.com}
+\item \texttt{aomail.alephobjects.com} --- Apache, Roundcube
+\item \texttt{analytics.alephobjects.com}  --- Apache, Piwik, MySQL
+\item \texttt{cal.alephobjects.com} --- Calendarserver
+\item \texttt{develdrupal.lulzbot.com} --- Test server. Apache, Drupal,
+       Ubercart, MySQL
+\item \texttt{develerp.alephobjects.com} --- Test server. OpenERP, Postgres
+\item \texttt{dodev.alephobjects.com} --- Test server. Odoo, Postgres
+\item \texttt{drupalsql.lulzbot.com} --- MySQL
+\item \texttt{forum.lulzbot.com} --- Apache, phpBB, MySQL
+\item \texttt{jabber.alephobjects.com} --- ejabberd
+\item \texttt{ldap.alephobjects.com} --- OpenLDAP
+\item \texttt{ohai-kit.alephobjects.com} --- Apache, OHAI-Kit, MySQL
+\item \texttt{ops.alephobjects.com} --- Apache, Opsview
+\item \texttt{phplist.alephobjects.com} --- Apache, phplist
+\item \texttt{projects.alephobjects.com} --- Apache, OpenProjects, MySQL
+\item \texttt{survey.alephobjects.com} --- Apache, LimeSurvey
+\item \texttt{www.lulzbot.com} --- Apache, Drupal, Ubercart
+\item \texttt{www.alephobjects.com} --- Apache, HTML :)
+\end{itemize}
+
+\subsection{Virtual Servers Elastichosts Los Angeles, offline}
+These are machines ``in the cloud'' but not running.
+
+\begin{itemize}
+\item \texttt{drupalsqlslave.lulzbot.com} --- MySQL
+\item \texttt{thinkup.alephobjects.com} --- Apache, ThinkUp, MySQL
 \end{itemize}
 
 \subsection{Virtual Servers Elastichosts Dallas}
-\begin{itemize}
-\item \texttt{download.alephobjects.com}
-\item \texttt{fone.alephobjects.com}
-\item \texttt{mail.alephobjects.com}
-\item \texttt{wiki.alephobjects.com}
-\end{itemize}
+These are machines ``in the cloud''
 
-\subsection{Test Virtual Servers Elastichosts Los Angeles}
 \begin{itemize}
-\item \texttt{develdrupal.lulzbot.com}
-\item \texttt{develerp.lulzbot.com}
+\item \texttt{download.alephobjects.com} --- Apache, vsftpd, rsyncd
+\item \texttt{fone.alephobjects.com} --- Asterisk
+\item \texttt{mail.alephobjects.com} --- Postfix, dovecot, spamassassin, MySQL 
+\item \texttt{wiki.alephobjects.com} --- Test server. Apache, Mediawiki, MySQL
 \end{itemize}
 
 \subsection{Tummy Servers}
+The server at Tummy.
+
 \begin{itemize}
-\item \texttt{belly.alephobjects.com}
+\item \texttt{belly1.alephobjects.com} --- Tummy Backup server
 \end{itemize}
 
 \section{Services}
 \subsection{Public URLs}
 \begin{itemize}
-\item \url{https://www.alephobjects.com}
-\item \url{https://www.lulzbot.com}
-\item \url{https://devel.alephobjects.com}
-\item \url{https://devel.lulzbot.com}
-\item \url{https://download.alephobjects.com}
-\item \url{https://download.lulzbot.com}
-\item \url{https://forum.lulzbot.com}
-\item \url{https://ohai-kit.alephobjects.com}
-\item \url{https://phplist.alephobjects.com}
-\item \url{https://survey.alephobjects.com}
-\item \url{rsync://rsync.alephobjects.com}
-\item \url{sip://fone.alephobjects.com}
+\item \url{https://www.alephobjects.com} --- Main Aleph Objects website
+\item \url{https://www.lulzbot.com} --- Main LulzBot website
+\item \url{https://devel.alephobjects.com} --- Public development files for
+       Aleph Objects
+\item \url{https://devel.lulzbot.com} --- Public development files for LulzBot
+\item \url{https://download.alephobjects.com} --- Aleph Objects downloads
+\item \url{https://download.lulzbot.com} --- Final release source code for
+       LulzBot products
+\item \url{https://forum.lulzbot.com} --- User discussion forum for LulzBot
+\item \url{https://ohai-kit.alephobjects.com} --- Visual work instructions for
+       assembling products and user support
+\item \url{https://phplist.alephobjects.com} --- Newletter mailing list
+\item \url{https://survey.alephobjects.com} --- Surveys
+\item \url{rsync://rsync.alephobjects.com} --- Rsync file server of download
+       and development archives
 \end{itemize}
 
 \subsection{Employee URLs}
+These are URLs that are for Aleph Objects employees.
+
 \begin{itemize}
-\item \url{https://analytics.alephobjects.com}
-\item \url{https://aomail.alephobjects.com}
-\item \url{https://belly1.alephobjects.com}
-\item \url{https://ops.alephobjects.com}
-\item \url{http://projects.alephobjects.com}
-\item \url{https://wiki.alephobjects.com}
+\item \url{https://analytics.alephobjects.com} --- Website analytics
+\item \url{https://aomail.alephobjects.com} --- Webmail server
+\item \url{https://belly1.alephobjects.com} --- Backup server
+\item \url{https://erp.alephobjects.com} --- ERP server
+\item \url{https://ops.alephobjects.com} --- Network monitoring
+\item \url{https://projects.alephobjects.com} --- Project tracking
+\item \url{https://wiki.alephobjects.com} --- Development wiki
 \end{itemize}
 
 \subsection{Server Daemons}
+These are the server daemons used to drive the enterprise.
+
 \begin{itemize}
-\item \href{http://httpd.apache.org/}{Apache Web Server}
-\item \href{http://www.asterisk.org}{Asterisk}
-\item \href{https://github.com/tummy-dot-com/tummy-backup}{Backups}
-\item \href{http://dnsmasq.org/}{dhcpd}
-\item \href{http://dnsmasq.org/}{DNS}
-\item \href{http://www.drupal.org}{Drupal} with \href{http://www.ubercart.org/}{UberCart}
-\item \href{http://www.ejabberd.im/}{ejabberd}
-\item \href{http://www.openbsd.org/faq/pf/}{Firewall}
-\item \href{http://fuse.sourceforge.net/sshfs.html}{sshfs}
-\item \href{http://dovecot.org/}{IMAP}
-\item \href{http://www.mysql.org/}{MySQL}
-\item \href{http://support.ntp.org/}{ntpd}
-\item \href{http://www.openerp.org/}{OpenERP}
-\item \href{http://www.openssh.com/}{OpenSSH}
-\item \href{http://openvpn.net/}{OpenVPN}
-\item \href{http://www.opsview.com/}{Opsview}
-\item \href{http://community.pentaho.com/}{Pentaho}
-\item \href{https://www.phpbb.com/}{phpBB}
-\item \href{http://www.postfix.org/}{Postfix}
-\item \href{http://www.postgresql.org/}{Postgres}
-\item \href{http://rsync.samba.org/}{rsync}
-\item \href{http://dnsmasq.org/}{tftp}
-\item \href{https://www.varnish-cache.org/}{Varnish}
+\item \href{http://httpd.apache.org/}{Apache} --- Web daemon, used on many
+       servers.
+\item \href{http://www.asterisk.org}{Asterisk} --- Telephone server. DIDs
+       (incoming), termination (outgoing), forwarding of calls, conferencing,
+       voicemail, xmpp
+\item \href{https://github.com/tummy-dot-com/tummy-backup}{Tummy Backups} --- Backup server
+\item \href{http://dnsmasq.org/}{dhcpd} --- DHCP for 350+ hosts
+\item \href{http://dnsmasq.org/}{DNS} --- DNS caching
+\item \href{http://www.drupal.org}{Drupal} with
+            \href{http://www.ubercart.org/}{UberCart} --- Main LulzBot site
+\item \href{http://www.ejabberd.im/}{ejabberd} --- Erlang XMPP (jabber) server
+\item \href{http://www.openbsd.org/faq/pf/}{Firewall} --- PF
+\item \href{http://fuse.sourceforge.net/sshfs.html}{sshfs} --- Main internal fileserver
+\item \href{http://dovecot.org/}{IMAP} --- Employee IMAP incoming mail server
+\item \href{http://munin-monitoring.org/}{Munin} --- Network graphing
+\item \href{http://www.mysql.org/}{MySQL} --- Used on many servers for a database
+\item \href{http://support.ntp.org/}{ntpd} --- Syncs time on every server
+\item \href{http://www.odoo.com/}{Odoo} --- ERP server, next generation of OpenERP
+\item \href{http://www.openerp.org/}{OpenERP} --- ERP server
+\item \href{http://www.openssh.com/}{OpenSSH} --- Used to control every server
+\item \href{http://openvpn.net/}{OpenVPN} --- Connects external resources,
+       such as employee mobiles and laptops, to the internal network
+\item \href{http://www.opsview.com/}{Opsview} --- Network monitoring (cf.
+       nagios)
+\item \href{http://community.pentaho.com/}{Pentaho} --- Report server,
+       connects to ERP
+\item \href{https://www.phpbb.com/}{phpBB} --- User discussion forum
+\item \href{http://www.postfix.org/}{Postfix} --- SMTP outgoing mail server
+\item \href{http://www.postgresql.org/}{Postgres} --- Database server
+\item \href{http://rsync.samba.org/}{rsync} --- File server
+\item \href{http://dnsmasq.org/}{tftp} --- Network install server
 \end{itemize}
 
 \section{3D Printer Cluster}
