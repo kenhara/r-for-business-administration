@@ -1,0 +1,32 @@
+#!/bin/bash
+# (C) 2015, Aleph Objects, Inc.
+# GPLv3 
+#
+# This script will take a file with a list of debian packages, get the name,
+# Homepage, and description, and output that in .tex.
+#
+# Go to a workstation with a full set of packages, and run something like this
+# to get a list of packages that have an entry in the menu:
+# cd /usr/share/applications/
+# dpkg -S * | cut -f -1 -d ":" | sed -e 's/,//g' -e 's/ //g' | sort -u > ~/GUI-dpkg
+# Manually remove packages that aren't desired.
+
+# Then parse that file with this scriptlet
+for i in `cat GUI-dpkg`
+ do dpkg-query							\
+	--show							\
+	--showformat='\\subsection{\\href{${Homepage}}{${binary:Package}}}\n'	\
+	$i
+ echo
+ dpkg-query							\
+	--show							\
+	--showformat='${Description}\n\n'			\
+	$i							\
+	| sed -e 's/ \./ /g'					\
+	| sed -e 's/&/and/g'					\
+	| grep "^ "						
+	echo
+done
+
+exit 0
+
