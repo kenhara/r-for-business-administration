@@ -27,17 +27,47 @@ set -x
 
 DOTFILE="$@"
 
+mv tmp.png tmp-bak.png
+
 rm aonet-dot-fdp-splines.png aonet-dot-neato.png aonet-dot-twopi.png aonet-dot-fdp.png
 
-fdp -v -Gsplines=true -Grotate=90 -Goverlap=false  -o aonet-dot-fdp-splines.png -Tpng "$DOTFILE" &&
-geeqie -f aonet-dot-fdp-splines.png
+# Runs forever
+#fdp -v -Gsplines=ortho -Grotate=90 -Goverlap=false  -o new.png -Tpng "$DOTFILE"
 
-neato -Goverlap=false  -o aonet-dot-neato.png -Tpng "$DOTFILE" &&
-geeqie -f aonet-dot-neato.png
+# neato tests
+# http://graphviz.org/Documentation/neatoguide.pdf
+clear
+# Forever
+#neato -Gsplines=ortho -Goverlap=false -o tmp.png -Tpng "$DOTFILE"
+# Good, breaks out each switch "island" ok:
+#neato -Goverlap=scale -o tmp.png -Tpng "$DOTFILE"
+# Forever
+#neato -Goverlap=scale -Gsplines=ortho -o tmp.png -Tpng "$DOTFILE"
+# Good, best yet, but not perfect at all. Takes awhile to run
+neato -Gsplines=true -Goverlap=scale -o tmp.png -Tpng "$DOTFILE"
+# Ok
+#neato -Gsplines=true -Goverlap=scale -Goverlap=false -o tmp.png -Tpng "$DOTFILE"
+# Foreverish
+#neato -Gsplines=ortho -Goverlap=scale -o tmp.png -Tpng "$DOTFILE"
+echo
 
-twopi -Goverlap=false  -o aonet-dot-twopi.png -Tpng "$DOTFILE" &&
-geeqie -f aonet-dot-twopi.png
+exit 0
 
-fdp -o aonet-dot-fdp.png -Tpng "$DOTFILE" &&
-geeqie -f aonet-dot-fdp.png
+clear
+fdp -v -Gsplines=true -Grotate=90 -Goverlap=false  -o aonet-dot-fdp-splines.png -Tpng "$DOTFILE"
+echo
+geeqie -f . &
+
+
+clear
+neato -Goverlap=false  -o aonet-dot-neato.png -Tpng "$DOTFILE"
+echo
+
+clear
+twopi -Goverlap=false  -o aonet-dot-twopi.png -Tpng "$DOTFILE"
+echo
+
+clear
+fdp -o aonet-dot-fdp.png -Tpng "$DOTFILE"
+echo
 
