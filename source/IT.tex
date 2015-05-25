@@ -10,6 +10,20 @@
 % International Public License (CC BY-SA 4.0) by Aleph Objects, Inc.
 %
 
+\section{Network}
+The Aleph Objects network is comprised of workstations, phones and servers at
+Aleph Mountain and our upstream providers. See figure
+\ref{fig:ao_net_overview} for an overview of Aleph Objects' network,
+figure \ref{fig:ao_net_sfdp} for a detailed network diagram, and
+figure \ref{fig:ao_net_dia} for an older network diagram.
+
+\begin{figure}[h!]
+% The ao-network-overview.pdf built in calligraflow.
+\includegraphics[keepaspectratio=true,height=1.10\textheight,width=1.00\textwidth,angle=0]{ao-network-overview.pdf}
+ \caption{Aleph Objects Network Overview, May, 2015}
+ \label{fig:ao_net_overview}
+\end{figure}
+
 \section{Servers}
 In general, the servers are all running the latest stable release of Debian,
 Jessie, version 8, on the amd64 architecture. Some are running Wheezy because
@@ -356,23 +370,50 @@ codename \href{https://www.debian.org/releases/jessie/}{Jessie}.
 \item \href{http://www.videolan.org/vlc/download-android.html}{VLC}
 \end{itemize}
 
-\section{Network Diagram}
-See figure \ref{fig:ao_net_overview} for an overview of Aleph Objects' network.
-See figure \ref{fig:ao_net_dia} for an older Aleph Objects network diagram.
+\section{Network Diagrams}
+See figure \ref{fig:ao_net_overview} for an overview of Aleph Objects' network from May, 2015.
+%See figure \ref{fig:ao_net_dot} for an Aleph Objects network diagram from 2015-05.
+%See figure \ref{fig:ao_net_neato} for an Aleph Objects network diagram from May, 2015.
+See figure \ref{fig:ao_net_sfdp} for a detailed Aleph Objects network diagram from 2015-05.
+See figure \ref{fig:ao_net_dia} for an older Aleph Objects network diagram from February, 2014.
+
+%\begin{sidewaysfigure}[p]
+%\thisfloatpagestyle{empty}
+%% The ao-network-overview.pdf built in calligraflow.
+%\includegraphics[keepaspectratio=true,height=1.10\textheight,width=1.00\textwidth,angle=0]{ao-network-overview.pdf}
+% \caption{Aleph Objects Network Overview}
+% \label{fig:ao_net_overview}
+%\end{sidewaysfigure}
+
+%\begin{sidewaysfigure}[p]
+%\thisfloatpagestyle{empty}
+%% The aonet-dot.png built with dot from aonet.dot source.
+%\includegraphics[keepaspectratio=true,height=1.10\textheight,width=1.00\textwidth,angle=0]{aonet-dot.png}
+% \caption{Aleph Objects Network Overview, dot}
+% \label{fig:ao_net_dot}
+%\end{sidewaysfigure}
+
+%\begin{sidewaysfigure}[p]
+%\thisfloatpagestyle{empty}
+%% The aonet-neato.png built with neato from aonet.dot source.
+%\includegraphics[keepaspectratio=true,height=1.10\textheight,width=1.00\textwidth,angle=0]{aonet-neato.png}
+% \caption{Aleph Objects Network Overview, neato}
+% \label{fig:ao_net_neato}
+%\end{sidewaysfigure}
+
+\begin{sidewaysfigure}[p]
+\thisfloatpagestyle{empty}
+% The aonet-sfdp.png built with sfdp from aonet.dot source.
+\includegraphics[keepaspectratio=true,height=1.10\textheight,width=1.00\textwidth,angle=0]{aonet-sfdp.png}
+ \caption{Aleph Objects Network Detail, May 2015}
+ \label{fig:ao_net_sfdp}
+\end{sidewaysfigure}
 
 \begin{sidewaysfigure}[p]
 \thisfloatpagestyle{empty}
 % The ao-network.pdf was built in Dia.
 \includegraphics[keepaspectratio=true,height=1.10\textheight,width=1.00\textwidth,angle=-90]{ao-network.pdf}
- \caption{Network Diagram}
+ \caption{Aleph Objects Network Diagram, February 2014}
  \label{fig:ao_net_dia}
-\end{sidewaysfigure}
-
-\begin{sidewaysfigure}[p]
-\thisfloatpagestyle{empty}
-% The ao-network-overview.pdf built in calligraflow.
-\includegraphics[keepaspectratio=true,height=1.10\textheight,width=1.00\textwidth,angle=0]{ao-network-overview.pdf}
- \caption{Aleph Objects Network Overview}
- \label{fig:ao_net_overview}
 \end{sidewaysfigure}
 

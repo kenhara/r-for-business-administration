@@ -14,60 +14,21 @@
 # http://www.graphviz.org/pdf/dotguide.pdf
 # Colors:
 # http://www.graphviz.org/doc/info/colors.html
+# Neato:
+# http://graphviz.org/Documentation/neatoguide.pdf
 #
 # Run these to generate dot code based on the clusterssh nodes.
-# for i in `grep aoworkstations ~/.clusterssh/clusters |head -1` ; do echo -e '\t"LAN" -> {"'$i'"};' ; done >> aonet.dot
-# for i in `grep aosqueeze ~/.clusterssh/clusters |head -1` ; do echo -e '\t"Elastichosts " -> {"'$i'"};' ; done  >> aonet.dot
-# for i in `grep aowheezy ~/.clusterssh/clusters |head -1` ; do echo -e '\t"Elastichosts " -> {"'$i'"};' ; done  >> aonet.dot
-# for i in `grep aojessie ~/.clusterssh/clusters |head -1` ; do echo -e '\t"Elastichosts " -> {"'$i'"};' ; done  >> aonet.dot
-# for i in `grep aolaptops ~/.clusterssh/clusters |head -1` ; do echo -e '\t"Internet" -> {"'$i'"};' ; done  >> aonet.dot
-# for i in `grep ^bbb- ~/.clusterssh/clusters | cut -f 2- -d " " | sed -e 's/aleph@//g'` ; do echo -e '\t"Cluster" -> {"'$i'"};' ; done  >> aonet.dot
-
-set -x
+# for i in `grep aoworkstations ~/.clusterssh/clusters |head -1` ; do echo -e '\t"LAN" -- {"'$i'"};' ; done >> aonet.dot
+# for i in `grep aosqueeze ~/.clusterssh/clusters |head -1` ; do echo -e '\t"Elastichosts " -- {"'$i'"};' ; done  >> aonet.dot
+# for i in `grep aowheezy ~/.clusterssh/clusters |head -1` ; do echo -e '\t"Elastichosts " -- {"'$i'"};' ; done  >> aonet.dot
+# for i in `grep aojessie ~/.clusterssh/clusters |head -1` ; do echo -e '\t"Elastichosts " -- {"'$i'"};' ; done  >> aonet.dot
+# for i in `grep aolaptops ~/.clusterssh/clusters |head -1` ; do echo -e '\t"Internet" -- {"'$i'"};' ; done  >> aonet.dot
+# for i in `grep ^bbb- ~/.clusterssh/clusters | cut -f 2- -d " " | sed -e 's/aleph@//g'` ; do echo -e '\t"Cluster" -- {"'$i'"};' ; done  >> aonet.dot
 
 DOTFILE="$@"
 
-mv tmp.png tmp-bak.png
-
-rm aonet-dot-fdp-splines.png aonet-dot-neato.png aonet-dot-twopi.png aonet-dot-fdp.png
-
-# Runs forever
-#fdp -v -Gsplines=ortho -Grotate=90 -Goverlap=false  -o new.png -Tpng "$DOTFILE"
-
-# neato tests
-# http://graphviz.org/Documentation/neatoguide.pdf
-clear
-# Forever
-#neato -Gsplines=ortho -Goverlap=false -o tmp.png -Tpng "$DOTFILE"
-# Good, breaks out each switch "island" ok:
-#neato -Goverlap=scale -o tmp.png -Tpng "$DOTFILE"
-# Forever
-#neato -Goverlap=scale -Gsplines=ortho -o tmp.png -Tpng "$DOTFILE"
-# Good, best yet, but not perfect at all. Takes awhile to run
-neato -Gsplines=true -Goverlap=scale -o tmp.png -Tpng "$DOTFILE"
-# Ok
-#neato -Gsplines=true -Goverlap=scale -Goverlap=false -o tmp.png -Tpng "$DOTFILE"
-# Foreverish
-#neato -Gsplines=ortho -Goverlap=scale -o tmp.png -Tpng "$DOTFILE"
-echo
-
-exit 0
-
-clear
-fdp -v -Gsplines=true -Grotate=90 -Goverlap=false  -o aonet-dot-fdp-splines.png -Tpng "$DOTFILE"
-echo
-geeqie -f . &
-
-
-clear
-neato -Goverlap=false  -o aonet-dot-neato.png -Tpng "$DOTFILE"
-echo
-
-clear
-twopi -Goverlap=false  -o aonet-dot-twopi.png -Tpng "$DOTFILE"
-echo
-
-clear
-fdp -o aonet-dot-fdp.png -Tpng "$DOTFILE"
-echo
+neato -Gsplines=true -Goverlap=false -o tmp.png -Tpng "$DOTFILE"
+#dot -Goverlap=scale -Gsplines=true -o tmp.png -Tpng "$DOTFILE"
+#sfdp -Goverlap=scale -Gsplines=true -o tmp.png -Tpng "$DOTFILE"
+#circo -Goverlap=scale -Gsplines=true -o tmp.png -Tpng "$DOTFILE"
 
