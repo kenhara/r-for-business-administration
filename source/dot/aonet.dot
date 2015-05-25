@@ -1,35 +1,49 @@
 /*
+aonet.dot
+Copyright 2015, Aleph Objects, Inc.
+GPLv3
+*/
+
+/*
 strict digraph "aonet" {
 */
 graph G {
 /*
-Needs to add 2D printers
+Need to add 2D printers
 */
-/*	node [shape=box,style=filled,color=red];
-        "Internet" -- {"Firewall"}; */
-/*
-	node [shape=box,style=filled,color=forestgreen];
-        "Firewall" -- {"Firewall em0"};
-        "Firewall" -- {"Firewall em1"};
-        "Firewall" -- {"Firewall em2"};
-        "Firewall" -- {"Firewall em3"};
-	node [shape=box,style=filled,color=green];
-        "Firewall em0" -- {"Core Switch"};
-        "Firewall em3" -- {"Cluster Switch"};
-	node [shape=box,style=filled,color=red];
-        "Firewall em1" -- {"Comcast Fiber"};
-        "Firewall em2" -- {"Skybeam Wireless"};
-*/
-	node [shape=box,style=filled,color=green];
+	node [shape=box,style=filled,color=olivedrab2]; /* Routers */
+	edge [color = green]; /* Routers */
+        "Firewall"
+	node [shape=box,style=filled,color=dodgerblue]; /* Switches */
+	edge [color = blue]; /* Switches */
         "Firewall" -- {"Core Switch"};
         "Firewall" -- {"Cluster Switch"};
-	node [shape=box,style=filled,color=red];
+	node [shape=box,style=filled,color=lawngreen]; /* Backbone */
         "Firewall" -- {"Internet"};
+	node [shape=box,style=filled,color=olivedrab2]; /* Routers */
+	edge [color = green]; /* Routers */
         "Elastichosts LAX" -- {"Internet"};
         "Elastichosts DAL" -- {"Internet"};
-	node [shape=box,style=filled,color=cadetblue2];
+	node [shape=box,style=filled,color=dodgerblue]; /* Switches */
+	edge [color = blue]; /* Switches */
 	"Sales Switch" -- {"Core Switch"};
-	node [shape=octagon,style=filled,color=yellow]; /* VoIP Phones */
+	node [shape=polygon,style=filled,color=lightblue]; /* Workstations */
+	edge [color = green]; /* Workstations */
+	"Sales Switch" -- {"albatross"};
+	"Sales Switch" -- {"bunting"};
+	"Sales Switch" -- {"duck"};
+	"Sales Switch" -- {"merlin"};
+	"Sales Switch" -- {"peacock"};
+	"Sales Switch" -- {"pickwick"};
+	"Sales Switch" -- {"saltador"};
+	"Sales Switch" -- {"smew"};
+	"Sales Switch" -- {"spoonbill"};
+	"Sales Switch" -- {"stork"};
+	"Sales Switch" -- {"warbler"};
+	"Sales Switch" -- {"whimbrel"};
+	"Sales Switch" -- {"woodlark"};
+	node [shape=doublecircle,style=filled,color=yellow]; /* VoIP Phones */
+	edge [color = purple]; /* VoIP Phones */
         "Sales Switch" -- {"video32"};
         "Sales Switch" -- {"video12"};
         "Sales Switch" -- {"video34"};
@@ -42,54 +56,96 @@ Needs to add 2D printers
         "Sales Switch" -- {"video31"};
         "Sales Switch" -- {"video20"};
         "Sales Switch" -- {"video37"};
-	node [shape=box,style=filled,color=darkslategray2];
+	node [shape=box,style=filled,color=dodgerblue]; /* Switches */
+	edge [color = blue]; /* Switches */
 	"Shipping Switch" -- {"Core Switch"};
-	node [shape=octagon];
-	node [shape=octagon,style=filled,color=yellow]; /* VoIP Phones */
+	node [shape=polygon,style=filled,color=lightblue]; /* Workstations */
+	edge [color = green]; /* Workstations */
+	"Shipping Switch" -- {"chicken"};
+	"Shipping Switch" -- {"egret"};
+	node [shape=doublecircle,style=filled,color=yellow]; /* VoIP Phones */
+	edge [color = purple]; /* VoIP Phones */
         "Shipping Switch" -- {"video16"};
         "Shipping Switch" -- {"video7"};
-	node [shape=box,style=filled,color=paleturquoise];
+	node [shape=box,style=filled,color=dodgerblue]; /* Switches */
+	edge [color = blue]; /* Switches */
 	"RD Switch" -- {"Core Switch"};
-	node [shape=octagon,style=filled,color=yellow]; /* VoIP Phones */
+	node [shape=polygon,style=filled,color=lightblue]; /* Workstations */
+	edge [color = green]; /* Workstations */
+        "RD Switch" -- {"auk"};
+	"RD Switch" -- {"falcon"};
+	"RD Switch" -- {"firefinch"};
+	"RD Switch" -- {"geese"};
+	"RD Switch" -- {"macaw"};
+	node [shape=doublecircle,style=filled,color=yellow]; /* VoIP Phones */
+	edge [color = purple]; /* VoIP Phones */
         "RD Switch" -- {"video6"};
         "RD Switch" -- {"video43"};
         "RD Switch" -- {"video1"};
-	node [shape=box,style=filled,color=cornflowerblue];
+	node [shape=box,style=filled,color=dodgerblue]; /* Switches */
+	edge [color = blue]; /* Switches */
 	"Production Switch" -- {"Core Switch"};
-	node [shape=octagon,style=filled,color=yellow]; /* VoIP Phones */
+	node [shape=polygon,style=filled,color=lightblue]; /* Workstations */
+	edge [color = green]; /* Workstations */
+	"Production Switch" -- {"catbird"};
+	"Production Switch" -- {"pilotbird"};
+	node [shape=doublecircle,style=filled,color=yellow]; /* VoIP Phones */
+	edge [color = purple]; /* VoIP Phones */
         "Production Switch" -- {"video23"};
         "Production Switch" -- {"video44"};
-	node [shape=box,style=filled,color=darkturquoise];
+	node [shape=box,style=filled,color=dodgerblue]; /* Switches */
+	edge [color = blue]; /* Switches */
 	"Marketing Switch" -- {"Core Switch"};
-	node [shape=octagon,style=filled,color=yellow]; /* VoIP Phones */
+	node [shape=polygon,style=filled,color=lightblue]; /* Workstations */
+	edge [color = green]; /* Workstations */
+	"Marketing Switch" -- {"eagle"};
+	"Marketing Switch" -- {"myna"};
+	"Marketing Switch" -- {"shoebill"};
+	node [shape=doublecircle,style=filled,color=yellow]; /* VoIP Phones */
+	edge [color = purple]; /* VoIP Phones */
         "Marketing Switch" -- {"video40"};
         "Marketing Switch" -- {"video14"};
         "Marketing Switch" -- {"video28"};
-	node [shape=box,style=filled,color=deepskyblue];
+	node [shape=box,style=filled,color=dodgerblue]; /* Switches */
+	edge [color = blue]; /* Switches */
 	"CEO Office Switch" -- {"Core Switch"};
+	node [shape=polygon,style=filled,color=lightblue]; /* Workstations */
+	edge [color = green]; /* Workstations */
 	"CEO Office Switch" -- {"swan"};
-	node [shape=octagon,style=filled,color=yellow]; /* VoIP Phones */
+	node [shape=doublecircle,style=filled,color=yellow]; /* VoIP Phones */
+	edge [color = purple]; /* VoIP Phones */
         "CEO Office Switch" -- {"video17"};
         "CEO Office Switch" -- {"video21"};
-	node [shape=box,style=filled,color=darkslategray2];
+	node [shape=box,style=filled,color=dodgerblue]; /* Switches */
+	edge [color = blue]; /* Switches */
 	"NorthEast PoE Switch" -- {"Core Switch"};
+	node [shape=polygon,style=filled,color=lightblue]; /* Workstations */
+	edge [color = green]; /* Workstations */
 	"NorthEast PoE Switch" -- {"quetzal"};
 	"NorthEast PoE Switch" -- {"pipit"};
 	"NorthEast PoE Switch" -- {"quail"};
 	"NorthEast PoE Switch" -- {"wren"};
-	node [shape=octagon,style=filled,color=yellow]; /* VoIP Phones */
+	"NorthEast PoE Switch" -- {"cotinga"};
+	"NorthEast PoE Switch" -- {"flamingo"};
+	node [shape=doublecircle,style=filled,color=yellow]; /* VoIP Phones */
+	edge [color = purple]; /* VoIP Phones */
         "NorthEast PoE Switch" -- {"video13"};
         "NorthEast PoE Switch" -- {"video39"};
         "NorthEast PoE Switch" -- {"video25"};
         "NorthEast PoE Switch" -- {"video11"};
         "NorthEast PoE Switch" -- {"video33"};
         "NorthEast PoE Switch" -- {"video27"};
-	node [shape=box,style=filled,color=dodgerblue];
+	node [shape=box,style=filled,color=dodgerblue]; /* Switches */
+	edge [color = blue]; /* Switches */
 	"IT Office Switch" -- {"NorthEast PoE Switch"};
+	node [shape=polygon,style=filled,color=lightblue]; /* Workstations */
+	edge [color = green]; /* Workstations */
 	"IT Office Switch" -- {"magpie"};
-	node [shape=octagon,style=filled,color=yellow]; /* VoIP Phones */
+	node [shape=doublecircle,style=filled,color=yellow]; /* VoIP Phones */
+	edge [color = purple]; /* VoIP Phones */
         "IT Office Switch" -- {"video9"};
-	node [shape=box,style=filled,color=blue];
+	node [shape=box,style=filled,color=mediumseagreen]; /* Servers */
+	edge [color = darkgreen]; /* Servers */
 	"Core Switch" -- {"abejas"};
 	"Core Switch" -- {"aodb"};
 	"Core Switch" -- {"aogfs1"};
@@ -98,7 +154,8 @@ Needs to add 2D printers
 	"Core Switch" -- {"aocluster1"};
 	"Core Switch" -- {"aomds1"};
 	"Core Switch" -- {"cam"};
-	node [shape=octagon,style=filled,color=yellow]; /* VoIP Phones */
+	node [shape=doublecircle,style=filled,color=yellow]; /* VoIP Phones */
+	edge [color = purple]; /* VoIP Phones */
         "Core Switch" -- {"video2"};
         "Core Switch" -- {"video15"};
         "Core Switch" -- {"video22"};
@@ -108,30 +165,15 @@ Needs to add 2D printers
         "Core Switch" -- {"video30"};
         "Core Switch" -- {"video35"};
         "Core Switch" -- {"video38"};
-        "Core Switch" -- {"video40"};
-        "Core Switch" -- {"video41"};
         "Core Switch" -- {"video46"};
-	node [shape=box,style=filled,color=lightblue];
-	"Core Switch" -- {"albatross"};
-	"Core Switch" -- {"auk"};
-	"Core Switch" -- {"bunting"};
+	node [shape=polygon,style=filled,color=lightblue]; /* Workstations */
+	edge [color = green]; /* Workstations */
 	"Core Switch" -- {"bustard"};
 	"Core Switch" -- {"cahow"};
 	"Core Switch" -- {"cardinal"};
-	"Core Switch" -- {"catbird"};
-	"Core Switch" -- {"chicken"};
-	"Core Switch" -- {"cotinga"};
 	"Core Switch" -- {"crake"};
-	"Core Switch" -- {"dodo"};
-	"Core Switch" -- {"duck"};
-	"Core Switch" -- {"eagle"};
-	"Core Switch" -- {"egret"};
 	"Core Switch" -- {"emu"};
-	"Core Switch" -- {"falcon"};
-	"Core Switch" -- {"firefinch"};
-	"Core Switch" -- {"flamingo"};
 	"Core Switch" -- {"gannet"};
-	"Core Switch" -- {"geese"};
 	"Core Switch" -- {"goldeneye"};
 	"Core Switch" -- {"grackle"};
 	"Core Switch" -- {"grebe"};
@@ -140,45 +182,32 @@ Needs to add 2D printers
 	"Core Switch" -- {"kinglet"};
 	"Core Switch" -- {"kiwi"};
 	"Core Switch" -- {"limpkin"};
-	"Core Switch" -- {"macaw"};
 	"Core Switch" -- {"mallard"};
-	"Core Switch" -- {"merlin"};
-	"Core Switch" -- {"myna"};
 	"Core Switch" -- {"nene"};
 	"Core Switch" -- {"oriole"};
 	"Core Switch" -- {"osprey"};
 	"Core Switch" -- {"ostrich"};
-	"Core Switch" -- {"peacock"};
 	"Core Switch" -- {"petrel"};
-	"Core Switch" -- {"pickwick"};
-	"Core Switch" -- {"pilotbird"};
 	"Core Switch" -- {"puffin"};
 	"Core Switch" -- {"raven"};
-	"Core Switch" -- {"saltador"};
 	"Core Switch" -- {"sapsucker"};
 	"Core Switch" -- {"seagull"};
-	"Core Switch" -- {"shoebill"};
 	"Core Switch" -- {"skylark"};
-	"Core Switch" -- {"smew"};
 	"Core Switch" -- {"sora"};
-	"Core Switch" -- {"sparrow"};
-	"Core Switch" -- {"spoonbill"};
-	"Core Switch" -- {"stork"};
 	"Core Switch" -- {"tanager"};
 	"Core Switch" -- {"thrush"};
 	"Core Switch" -- {"vulture"};
-	"Core Switch" -- {"warbler"};
-	"Core Switch" -- {"whimbrel"};
 	"Core Switch" -- {"whistler"};
-	"Core Switch" -- {"woodlark"};
 	"Core Switch" -- {"woodpecker"};
-	node [shape=box,style=filled,color=blueviolet];
+	node [shape=box,style=filled,color=mediumseagreen]; /* Servers */
+	edge [color = darkgreen]; /* Servers */
 	"Elastichosts DAL" -- {"download"};
 	"Elastichosts DAL" -- {"fone"};
 	"Elastichosts DAL" -- {"mail"};
 	"Elastichosts DAL" -- {"wiki"};
 	"Elastichosts DAL" -- {"www"};
-	node [shape=box,style=filled,color=mediumseagreen];
+	node [shape=box,style=filled,color=mediumseagreen]; /* Servers */
+	edge [color = darkgreen]; /* Servers */
 	"Elastichosts LAX" -- {"aomail"};
 	"Elastichosts LAX" -- {"develdrupal"};
 	"Elastichosts LAX" -- {"develerp"};
@@ -195,7 +224,8 @@ Needs to add 2D printers
 	"Elastichosts LAX" -- {"forum"};
 	"Elastichosts LAX" -- {"jabber"};
 	"Elastichosts LAX" -- {"ldap"};
-	node [shape=box,style=filled,color=orchid];
+	node [shape=diamond,style=filled,color=orchid]; /* Laptops */
+	edge [color = darkorchid]; /* Laptops */
 	"Internet" -- {"adelie"};
 	"Internet" -- {"blossom"};
 	"Internet" -- {"blue"};
@@ -209,7 +239,8 @@ Needs to add 2D printers
 	"Internet" -- {"punto"};
 	"Internet" -- {"rockhopper"};
 	"Internet" -- {"ron"};
-	node [shape=octagon,style=filled,color=yellow]; /* VoIP Phones */
+	node [shape=doublecircle,style=filled,color=yellow]; /* VoIP Phones */
+	edge [color = purple]; /* VoIP Phones */
         "Internet" -- {"video42"};
         "Internet" -- {"video18"};
         "Internet" -- {"video45"};
@@ -217,7 +248,13 @@ Needs to add 2D printers
         "Internet" -- {"video3"};
         "Internet" -- {"video8"};
         "Internet" -- {"video4"};
-	node [shape=box,style=filled,color=lightcyan];
+	node [shape=polygon,style=filled,color=lightblue]; /* Workstations */
+	edge [color = green]; /* Workstations */
+	"Cluster Switch" -- {"dodo"};
+	"Cluster Switch" -- {"sparrow"};
+/* also need to add assembly line bbb */
+	node [shape=record,style=filled,color=lightcyan]; /* 3D Printers */
+	edge [color = turquoise4]; /* 3D Printers */
 	"Cluster Switch" -- {"bbb-a1"};
 	"Cluster Switch" -- {"bbb-a2"};
 	"Cluster Switch" -- {"bbb-a3"};
