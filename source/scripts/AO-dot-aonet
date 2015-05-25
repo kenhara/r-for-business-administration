@@ -1,0 +1,43 @@
+#!/bin/bash
+# Copyright 2015, Aleph Objects, Inc.
+# GPLv3
+#
+# This script will process a dotfile a few different ways, make a few pngs,
+# and display them.
+#
+# Usage:
+# AO-dot-aonet [dotfile]
+# Example:
+# AO-dot-aonet aonet.dot
+#
+# Some dot docs:
+# http://www.graphviz.org/pdf/dotguide.pdf
+# Colors:
+# http://www.graphviz.org/doc/info/colors.html
+#
+# Run these to generate dot code based on the clusterssh nodes.
+# for i in `grep aoworkstations ~/.clusterssh/clusters |head -1` ; do echo -e '\t"LAN" -> {"'$i'"};' ; done >> aonet.dot
+# for i in `grep aosqueeze ~/.clusterssh/clusters |head -1` ; do echo -e '\t"Elastichosts " -> {"'$i'"};' ; done  >> aonet.dot
+# for i in `grep aowheezy ~/.clusterssh/clusters |head -1` ; do echo -e '\t"Elastichosts " -> {"'$i'"};' ; done  >> aonet.dot
+# for i in `grep aojessie ~/.clusterssh/clusters |head -1` ; do echo -e '\t"Elastichosts " -> {"'$i'"};' ; done  >> aonet.dot
+# for i in `grep aolaptops ~/.clusterssh/clusters |head -1` ; do echo -e '\t"Internet" -> {"'$i'"};' ; done  >> aonet.dot
+# for i in `grep ^bbb- ~/.clusterssh/clusters | cut -f 2- -d " " | sed -e 's/aleph@//g'` ; do echo -e '\t"Cluster" -> {"'$i'"};' ; done  >> aonet.dot
+
+set -x
+
+DOTFILE="$@"
+
+rm aonet-dot-fdp-splines.png aonet-dot-neato.png aonet-dot-twopi.png aonet-dot-fdp.png
+
+fdp -v -Gsplines=true -Grotate=90 -Goverlap=false  -o aonet-dot-fdp-splines.png -Tpng "$DOTFILE" &&
+geeqie -f aonet-dot-fdp-splines.png
+
+neato -Goverlap=false  -o aonet-dot-neato.png -Tpng "$DOTFILE" &&
+geeqie -f aonet-dot-neato.png
+
+twopi -Goverlap=false  -o aonet-dot-twopi.png -Tpng "$DOTFILE" &&
+geeqie -f aonet-dot-twopi.png
+
+fdp -o aonet-dot-fdp.png -Tpng "$DOTFILE" &&
+geeqie -f aonet-dot-fdp.png
+
