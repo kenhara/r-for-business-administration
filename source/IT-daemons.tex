@@ -1,0 +1,162 @@
+%
+% IT.
+% Information Technology
+%
+% Aleph Objects Operations Manual
+%
+% Copyright (C) 2014, 2015 Aleph Objects, Inc.
+%
+% This document is licensed under the Creative Commons Attribution 4.0
+% International Public License (CC BY-SA 4.0) by Aleph Objects, Inc.
+%
+
+\section{Server Daemons}
+These are the server daemons used to drive the enterprise.
+
+\subsection{\href{http://sourceforge.net/projects/acpid2/}{ACPID}}
+Monitors ACPI events. Runs on nearly all servers and workstations.
+
+\subsection{\href{http://httpd.apache.org/}{Apache}}
+Web daemon, used on many servers.
+
+\subsection{\href{http://www.asterisk.org}{Asterisk}}
+Telephone server. DIDs (incoming), termination (outgoing), forwarding of calls, conferencing,
+voicemail, XMPP.
+
+\subsection{\href{https://github.com/tummy-dot-com/tummy-backup}{Backups}}
+tummy-backup backup server.
+
+\subsection{\href{http://www.isc.org/}{BIND}}
+Nameserver used for caching.
+
+\subsection{\href{http://www.botqueue.org/}{botqueue}}
+Print queue manager.
+
+\subsection{\href{http://www.debian.org/}{buildd}}
+Build service for compiling Debian packages.
+
+\subsection{\href{http://www.calendarserver.org/}{Calendar Server}}
+Calendar (CalDAV) and contacts (CardDAV) server. CalDAV is used with mobile
+phones and icedove. No group calendars. CardDav is unused. Uses python-twisted.
+
+Needs to be connected to or replaced by LDAP.
+
+\subsection{\href{http://ftp.isc.org/isc/cron/}{cron}}
+Scheduled triggering of applications (cf. at).
+
+\subsection{\href{http://dnsmasq.org/}{DHCP}}
+dnsmasq DHCP for 350+ hosts.
+
+\subsection{\href{http://dnsmasq.org/}{DNS}}
+dnsmasq DNS caching.
+
+\subsection{\href{http://dnsmasq.org/}{Dovecot}}
+IMAP mail services. Employees check their mail via the
+IMAP server, typically using icedove or aomail (roundcube using IMAP).
+
+\subsection{\href{http://www.drupal.org}{Drupal}}
+Main LulzBot site.
+
+Used with \href{http://www.ubercart.org/}{UberCart}.
+Migrating to Drupal Commerce.
+
+\subsection{\href{http://www.exim.org/}{exim}}
+SMTP outgoing mail server, used by default in Debian. Used by some servers.
+
+\subsection{\href{http://www.openbsd.org/faq/pf/}{Firewalls}}
+OpenBSD's PF, authpf, Linux's iptables.
+
+\subsection{\href{http://www.fail2ban.org/}{fail2ban}}
+Block out scripts, bots, crackers, and network noise on servers.
+
+\subsection{\href{http://www.debian.org/}{Init}}
+Init, woo!
+
+\subsection{md RAID}
+Linux RAID, md, mdadm.
+
+\subsection{\href{http://www.mediawiki.org/}{Mediawiki}}
+Test/development server for customer support.
+
+\subsection{\href{http://www.memcached.org/}{memcached}}
+Used to speed up websites, such as Drupal.
+
+\subsection{\href{http://motion.sf.net}{Motion}}
+Motion detection for video camera system. Cameras are aggregated
+using \href{https://bitbucket.org/ccrisan/motioneye/wiki/Home}{motionEye}.
+
+\subsection{\href{http://munin-monitoring.org/}{Munin}}
+Network graphing.
+
+\subsection{\href{http://www.mysql.org/}{MySQL}}
+Used on many servers for a database.
+
+\subsection{\href{http://support.ntp.org/}{NTP}}
+Syncs time on every server and workstation.
+
+\subsection{\href{http://www.odoo.com/}{Odoo}}
+Development ERP server, next generation of OpenERP.
+
+\subsection{\href{http://www.openerp.org/}{OpenERP}}
+ERP server.
+
+\subsection{\href{http://www.openldap.org/}{OpenLDAP}}
+LDAP server. Running, but not actively used. Daemon is slapd.
+
+\subsection{\href{http://www.openssh.com/}{OpenSSH}}
+Used to control every server, create encrypted tunnels (autossh),
+mount filesystems (sshfs), and remote file transfer (sftp).
+
+\subsection{\href{http://openvpn.net/}{OpenVPN}}
+Connects external resources, such as employee mobiles and laptops, to the internal network.
+
+\subsection{\href{http://www.opsview.com/}{Opsview}}
+Network monitoring (cf. nagios).
+
+\subsection{\href{http://community.pentaho.com/}{Pentaho}}
+Report server, connects to ERP.
+
+\subsection{\href{https://www.piwiki.org/}{Piwik}}
+Application to analyze web site traffic.
+
+\href{http://www.mrunix.net/webalizer/}{Webalizer} is used occassionally.
+
+\subsection{\href{https://www.phpbb.com/}{phpBB}}
+User discussion forum.
+
+\subsection{\href{http://www.postfix.org/}{Postfix}}
+Main SMTP outgoing mail server.
+
+\subsection{\href{http://www.postgresql.org/}{Postgres}}
+Database server.
+
+\subsection{\href{http://rsync.samba.org/}{rsync}}
+File server.
+
+\subsection{\href{http://www.rsyslog.com/}{rsyslog}}
+Logging on every server and workstation.
+
+\subsection{\href{http://www.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man8/sendmail.8?query=sendmail&sec=8}{sendmail}}
+SMTP outgoing mail server, used by default in OpenBSD.
+
+\subsection{\href{http://www.spamassassin.org/}{spamassassin}}
+Spam filtering of email.
+
+\subsection{\href{http://fuse.sourceforge.net/sshfs.html}{sshfs}}
+Main internal fileserver.
+
+\subsection{\href{http://www.freedesktop.org/wiki/Software/systemd}{systemd}}
+System bootup and process manager.
+
+\subsection{\href{http://dnsmasq.org/}{TFTP}}
+Network install server.
+
+\subsection{\href{http://vsftpd.beasts.org/}{vsftpd}}
+vsftpd FTP server for public facing download and devel servers.
+
+\subsection{\href{http://www.xinetd.org}{xinetd}}
+xinetd on Debian systems. inetd on OpenBSD. Misc network utils.
+
+\subsection{\href{http://www.ejabberd.im/}{XMPP/jabber}}
+ejabberd, Erlang XMPP (jabber) server.
+

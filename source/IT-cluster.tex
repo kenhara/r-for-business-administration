@@ -1,0 +1,43 @@
+%
+% IT.
+% Information Technology
+%
+% Aleph Objects Operations Manual
+%
+% Copyright (C) 2014, 2015 Aleph Objects, Inc.
+%
+% This document is licensed under the Creative Commons Attribution 4.0
+% International Public License (CC BY-SA 4.0) by Aleph Objects, Inc.
+%
+
+\section{3D Printer Cluster}
+There are 144 printers in the 3D printing cluster. One hundred thirty five are
+in the main cluster room, nine in the adjoining sample room. The cluster is a
+mix of LulzBot TAZ and LulzBot Minis.
+
+Each printer has a Beaglebone Black (BBB) connected to it via USB. The
+BBB is running Debian (armhf port) and Botqueue. There is a separate Botqueue
+server, also running Debian, that the BBBs connect to, to get print jobs.
+
+The printers are organized in sets, or ``pods'', typically of nine. Each cabinet
+holds nine machines, three wide by three high. Each pod is assigned a letter.
+In the main cluster room, this is A through O. In the sample room, it is pods
+Y and Z which have five and four machines, respectively. Machines are named
+of the format: bbb-a1, bbb-a2, through to bbb-a9 for the first pod. Then the
+next pod starts bbb-b1, through to the end: bbb-z4.
+
+List of printers:
+\begin{itemize}
+\item \texttt{bbb-a1.alephobjects.com} through
+      \texttt{bbb-o9.alephobjects.com} --- LulzBot TAZ.
+\item \texttt{bbb-y1.alephobjects.com} through
+      \texttt{bbb-z4.alephobjects.com} --- LulzBot Mini.
+\end{itemize}
+
+Links to upstream:
+\begin{itemize}
+\item \href{http://beagleboard.org/}{BeagleBone Black}
+\item \href{http://botqueue.org/}{BotQueue}
+\item \href{https://wiki.debian.org/ArmHardFloatPort}{Debian armhf}
+\end{itemize}
+
