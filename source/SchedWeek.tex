@@ -47,15 +47,14 @@
         \node[anchor=north east] at (1,\time) {\ustime};
 
     % Draw some day dividers.
-    \draw (1,6) -- (1,16);
-    \draw (2,6) -- (2,16);
-    \draw (3,6) -- (3,16);
-    \draw (4,6) -- (4,16);
-    \draw (5,6) -- (5,16);
-    \draw (6,6) -- (6,16);
+    \draw (1,7) -- (1,16);
+    \draw (2,7) -- (2,16);
+    \draw (3,7) -- (3,16);
+    \draw (4,7) -- (4,16);
+    \draw (5,7) -- (5,16);
+    \draw (6,7) -- (6,16);
     
     % Draw some hour dividers.
-    \draw (1,6) -- (6,6);
     \draw (1,7) -- (6,7);
     \draw (1,8) -- (6,8);
     \draw (1,9) -- (6,9);
@@ -76,8 +75,13 @@
     % time.
     % 1=Monday, 2=Tuesday, 3=Wednesday, 4=Thursday, 5=Friday
     %\node[entry={DURATION}{COLUMN WIDTH?}] at (DAY,HOUR) {TEXT};
+
+    % Monday
     \node[anchor=north] at (1.5,6.5) {Monday};
-    \node[entry={0.5}{1}] at (1,7) {New Employees};
+    \node[entry={1.0}{2}] at (1,7) {HR New};
+    \node[entry={0.25}{4}] at (1.5,7)  {\rotatebox{90}{\tiny{Mfg All}}};
+    \node[entry={0.25}{4}] at (1.75,7.25)  {\rotatebox{90}{\tiny{Lead}}};
+    \node[entry={0.5}{1}] at (1,8) {Outside Sales};
     \node[entry={1.5}{1}] at (1,9) {Manufacturing \& Materials};
     \node[entry={1.0}{1}] at (1,10.5){Sales};
     \node[entry={0.5}{1}] at (1,11.5) {Finance};
@@ -87,20 +91,26 @@
 
     % Tuesday
     \node[anchor=north] at (2.5,6.5) {Tuesday};
-    \node[entry={2.0}{1}] at (2,8) {Interviews};
+    \node[entry={0.25}{1}] at (2,7.25) {Mfg Lead};
+    \node[entry={2.0}{2}] at (2,8) {\rotatebox{90}{Interviews}};
+    \node[entry={1.0}{2}] at (2.5,8) {R \& D};
+    \node[entry={0.5}{1}] at (2,10) {Sales Support};
+    \node[entry={0.5}{1}] at (2,10.5) {Sales Acct Mgr};
     \node[entry={0.5}{1}] at (2,14) {CSR};
     
     % Wednesday
     \node[anchor=north] at (3.5,6.5) {Wednesday};
-    \node[entry={1.0}{1}] at (3,8) {R \& D};
-    \node[entry={0.5}{1}] at (3,10) {Cluster};
+    \node[entry={0.25}{1}] at (3,7.25) {Mfg Lead};
+    \node[entry={1.0}{1}] at (3,8) {R \& D Multi Dept};
     \node[entry={0.5}{1}] at (3,10.5) {IT};
     \node[entry={0.5}{1}] at (3,11) {Facility};
-    \node[entry={1.5}{1}] at (3,13) {Marketing};
+    \node[entry={1.5}{2}] at (3,13) {\rotatebox{90}{Marketing}};
+    \node[entry={0.5}{2}] at (3.5,13.5) {\rotatebox{90}{Cluster}};
     \node[entry={1.0}{1}] at (3,14.5) {NPI};
     
     % Thursday
     \node[anchor=north] at (4.5,6.5) {Thursday};
+    \node[entry={0.25}{1}] at (4,7.25) {Mfg Lead};
     \node[entry={5.0}{1}] at (4,8) {Interviews \& Reviews};
     \node[entry={0.5}{1}] at (4,13) {HR};
     \node[entry={0.5}{1}] at (4,13.5) {PEO Call};
@@ -108,15 +118,17 @@
     
     % Friday
     \node[anchor=north] at (5.5,6.5) {Friday};
-    \node[entry={1.0}{1}] at (5,10) {Web Consulting};
+    \node[entry={0.25}{1}] at (5,7.25) {Mfg Lead};
+    \node[entry={1.0}{2}] at (5,10) {Web Consulting};
+    \node[entry={1.0}{2}] at (5.5,10) {Purch. Mfg};
     \node[entry={0.5}{1}] at (5,13) {Software Dev};
     \node[entry={1.0}{1}] at (5,14) {Public Tours};
 
 \end{tikzpicture}
-\caption{Weekly Company Meetings}
+\caption{Weekly Company Meetings, Day Shift}
 \renewcommand{\dateseparator}{}
 % Timestamp Version: YYYY-MM-DD-Serial
-\hfill\texttt{v.2015-05-25-1}
+\hfill\texttt{v.2015-07-07-1}
 
  \label{fig:ao_week_meet}
 \end{sidewaysfigure}
