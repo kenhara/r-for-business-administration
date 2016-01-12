@@ -1,3 +1,5 @@
+This repo is no longer maintained. View the source code for the Aleph Objects Operations Manual here: https://code.alephobjects.com/diffusion/OM/
+
 # AOOM
 Aleph Objects Operations Manual
 
@@ -7,14 +9,14 @@ AOOM is available at these locations:
 
 * http://devel.alephobjects.com/ao/documentation/AOOM/AOOM.pdf
 
-* https://github.com/alephobjects/AOOM/blob/master/AOOM.pdf
+* https://code.alephobjects.com/diffusion/OM/browse/master/AOOM.pdf
 
 
 The AOOM document source code is available at these locations:
 
 * http://devel.alephobjects.com/ao/documentation/AOOM/
 
-* https://github.com/alephobjects/AOOM
+* https://code.alephobjects.com/diffusion/OM/
 
 
 Copyright 2014, 2015 Aleph Objects, Inc.
