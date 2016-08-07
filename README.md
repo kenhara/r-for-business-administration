@@ -1,10 +1,20 @@
 #MIGRATION NOTICE
-This document is a work in progress. It is being migrated 
-from a private Google Doc to LaTeX Memoir. This new format
-is more conducive to sharing, collaborating, and receiving
-contributions. It also gives users the option to enjoy the 
-contents of this document without being forced to use Google 
-Docs. 
+This document is a work in progress with three components. 
+
+First, removing the irrelevant original source used to 
+generate this document. (See below.) Attribution to the 
+original source material will remain in place, in per 
+the Creative Commons license it was shared under.
+
+Second, migrating content from a private Google Doc to 
+LaTeX Memoir. This new format is more conducive to sharing, 
+collaborating, and receiving contributions. It also gives 
+users the option to enjoy the contents of this document 
+without being forced to use Google Docs.
+
+Third, adding new content. This notice will be removed at 
+that time and the work will be in a normal state of 
+improvement, revision, etc.
 
 # R for Business Administration
 Content in the original document was licensed under GNU Free 
