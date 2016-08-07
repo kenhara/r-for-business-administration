@@ -1,3 +1,11 @@
+#MIGRATION NOTICE
+This document is a work in progress. It is being migrated 
+from a private Google Doc to LaTeX Memoir. This new format
+is more conducive to sharing, collaborating, and receiving
+contributions. It also gives users the option to enjoy the 
+contents of this document without being forced to use Google 
+Docs. 
+
 # R for Business Administration
 Content in the original document was licensed under GNU Free 
 Documentation License (GFDL) version 1.3. License is being 
