@@ -14,7 +14,7 @@ the upstream documentation license from Aleph Objects,
 whose source code is necessary for the creation of this 
 repository.
 
-Copyright 2016 Harris Kenny, Brandon Degolier, Nate Lewis
+Copyright 2016 Harris Kenny, Brandon DeGolier, Nate Lewis
 Permission is granted to copy, distribute and/or modify
 this document under the terms of the
 Creative Commons Attribution 4.0 International Public License
