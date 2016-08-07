@@ -1,22 +1,22 @@
-#MIGRATION NOTICE
-This document is a work in progress with three components. 
+# MIGRATION NOTICE
+This document is a work in progress with three components:
 
-First, removing the irrelevant original source used to 
-generate this document. (See below.) Attribution to the 
-original source material will remain in place, in per 
-the Creative Commons license it was shared under.
+1 Removing irrelevant original content included in source 
+used to generate this work.
 
-Second, migrating content from a private Google Doc to 
-LaTeX Memoir. This new format is more conducive to sharing, 
-collaborating, and receiving contributions. It also gives 
-users the option to enjoy the contents of this document 
-without being forced to use Google Docs.
+2 Migrating content from a private Google Doc to 
+LaTeX Memoir hosted on GitHub.
 
-Third, adding new content. This notice will be removed at 
-that time and the work will be in a normal state of 
-improvement, revision, etc.
+3 Adding new content, diagrams, explanations, etc.
+
+This notice will be removed when 1 and 2 are complete.
 
 # R for Business Administration
+This work strives to be a practical guide to using R for business 
+administration. While this work contains information about using statistics 
+in business, it is no substitute for learning statistics. Compute responsibly.
+
+# License
 Content in the original document was licensed under GNU Free 
 Documentation License (GFDL) version 1.3. License is being 
 changed to CC BY-SA 4.0 International to be consistent with 
@@ -30,7 +30,7 @@ this document under the terms of the
 Creative Commons Attribution 4.0 International Public License
 (CC BY-SA 4.0).
 
-# Original Source Material
+# Original Source
 Original source material derived from Aleph Objects Operations 
 Manual (AOOM) by Aleph Objects, Inc.
 
