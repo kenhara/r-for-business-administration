@@ -1,0 +1,16 @@
+%
+% AOOM.ist
+% makindex index style file
+%
+% Aleph Objects Operations Manual
+%
+% Copyright 2014 Aleph Objects, Inc.
+%
+% This document is licensed under the Creative Commons Attribution 4.0
+% International Public License (CC BY-SA 4.0) by Aleph Objects, Inc.
+%
+
+heading_prefix   "{\\normalsize \\bfseries\\hfil\\ "
+heading_suffix   " \\ \\hfil}\\nopagebreak\n"
+headings_flag       1
+
