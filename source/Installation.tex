@@ -13,20 +13,18 @@
 \section{Software Installation}
 
 \subsection{Your Computing Environment}
-R is a Free Software\footnote{Free software is software that gives you the user the freedom to share, study and modify it. We call this free software because the user is free. Learn more at \texttt{http://www.fsf.org/about/what-is-free-software}.} project. Similarly, this work recommends you use GNU/Linux for your computing environment.
-
-Not sure where to start? Learn more about some of the leading GNU/Linux distributions:
+R is a Free Software\footnote{Free software is software that gives you the user the freedom to share, study and modify it. We call this free software because the user is free. Learn more at \texttt{http://www.fsf.org/about/what-is-free-software}.} project. Similarly, this work recommends you use GNU/Linux for your computing environment. Not sure where to start? Learn more about some of the leading GNU/Linux distributions:
 
 \begin{itemize}
- \item Debian \texttt{http://www.debian.org/}
- \item Fedora \texttt{https://getfedora.org/}
- \item Ubuntu \texttt{http://www.ubuntu.com/}
+ \item Debian: \texttt{http://www.debian.org/}
+ \item Fedora: \texttt{https://getfedora.org/}
+ \item Ubuntu: \texttt{http://www.ubuntu.com/}
 \end{itemize}
 
 \subsection{Software Overview}
 R is a software environment that is capable of performing statistical analysis. For those interested in performing custom analyses, it is a powerful tool. The problem is that alone, R has a fairly high learning threshold: it requires learning a programming language and provides relatively little visual feedback.
 
-Thankfully, there is a freely licensed tool called R-Commander\footnote{Learn more about R-Commander by visiting \texttt{http://socserv.mcmaster.ca/jfox/Misc/Rcmdr/}.} which helps solve both of these problems by creating a graphical interface for R. Combined, they make a compelling solution for those who only need basic analysis, while also allowing greater customization and depth for those who need more sophisticated analysis.
+Thankfully, there is a freely licensed tool called R-Commander\footnote{Learn more about R-Commander online: \texttt{http://socserv.mcmaster.ca/jfox/Misc/Rcmdr/}.} which helps solve both of these problems by creating a graphical interface for R. Combined, they make a compelling solution for those who only need basic analysis, while also allowing greater customization and depth for those who need more sophisticated analysis.
 
 While installation is fairly simple, it does require some attention to detail to make sure that everything installs properly.
 
@@ -39,7 +37,7 @@ While installation is fairly simple, it does require some attention to detail to
 
 R is part of many GNU/Linux distributions, you should check with your GNU/Linux package management system in addition to the link above. 
 
-\subsection{Installing R Commander\footnote{Find more detailed installation instructions online here: \texttt{http://socserv.mcmaster.ca/jfox/Misc/Rcmdr/installation-notes.html}}}
+\subsection{Installing R Commander}
 \begin{enumerate}
  \item Once you have installed R, open it by double-clicking on the icon or opening through a terminal emulator.
  \item A window called “R Console” will open.
@@ -50,14 +48,13 @@ install.packages("Rcmdr", dependencies = TRUE)
  \item R should respond by asking you to select a mirror site, and listing them in a pop-up box.
  \item Choose a nearby location.
  \item Depending on your connection speed, the installation may take a while. Be patient and wait until you see the prompt again before you do anything.
+ \end{enumerate}
  
 \subsection{Starting R Commander}
 If R is not already open, open it by clicking on its icon or through a terminal emulator. To open R Commander, at the prompt enter the following command:
 
 library(Rcmdr)
 
-You should see a large new window pop up, labeled R Commander.
-
-You are now ready to analyze your data with R Commander. If you close this window while R is still open, you can start R Commander again by entering the command Commander() in R Console. Entering library(Rcmdr) in this situation will not work unless you close R and open it again.
+You should see a large new window pop up, labeled R Commander.\footnote{Find detailed installation instructions online: \texttt{http://socserv.mcmaster.ca/jfox/Misc/Rcmdr/installation-notes.html}} You are now ready to analyze your data with R Commander. If you close this window while R is still open, you can start R Commander again by entering the command Commander() in R Console. Entering library(Rcmdr) in this situation will not work unless you close R and open it again.
 
 Congratulations! Now let's get to work.
