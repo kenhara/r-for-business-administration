@@ -1,0 +1,62 @@
+%
+% Basics.tex
+% Basics
+%
+% R for Business Administration
+%
+% Copyright (C) 2016 Harris Kenny, Brandon DeGolier, Nate Lewis
+%
+% This document is licensed under the Creative Commons Attribution 4.0
+% International Public License (CC BY-SA 4.0)
+%
+
+\section{User Interface}
+
+\subsection{R}
+
+\subsection{R-Commander}
+
+\section{Datasets}
+
+\subsection{Importing Data}
+Using Rcmdr, select Data then drop down to Import Data to import a dataset based (categorized by file format). If you are using R Script, read.table is the most common command to do this. There are many compatible file formats and ways to import data into R, find support for specific common file types below, or online.
+
+Importing CSV Files
+
+Using R Script and read.table, note whether your CSV has a header or not. If it does, mark TRUE. If not, mark FALSE.
+
+Dataset <-  read.table("/filename.csv", header = FALSE, sep = ",")
+
+Importing ODS Files
+
+It is possible to import ODS file (an Open Document Format spreadsheet) directly into R after installing a separate package called readODS. Once installed, this is an example of an R Script command to import an ODS file:
+
+read.ods(file = NULL, sheet = NULL, formulaAsFormula = FALSE)
+
+There are several arguments you can use with this command, find a more detailed walkthrough online here: \texttt{https://cran.r-project.org/web/packages/readODS/readODS.pdf}
+
+\subsection{Viewing Datasets}
+
+View dataset
+print(Dataset)
+
+View number of records in dataset
+nrow(Dataset)
+
+View variable names in dataset
+names(Dataset)
+
+View data types of variables in dataset
+str(Dataset)
+
+View last records in dataset
+tail(Dataset)
+
+Summary statistics
+summary(Dataset)
+
+Yields: Mean, Median, Minimum value, Maximum value, Quartiles
+
+\subsection{Active Dataset}
+
+\subsection{Editing Datasets}
