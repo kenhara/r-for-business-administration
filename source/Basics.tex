@@ -31,13 +31,13 @@ Importing CSV Files
 
 Using R Script and read.table, note whether your CSV has a header or not. If it does, mark TRUE. If not, mark FALSE.
 
-Dataset <-  read.table("/filename.csv", header = FALSE, sep = ",")
+> Dataset <-  read.table("/filename.csv", header = FALSE, sep = ",")
 
 Importing ODS Files
 
 It is possible to import ODS file (an Open Document Format spreadsheet) directly into R after installing a separate package called readODS. Once installed, this is an example of an R Script command to import an ODS file:
 
-read.ods(file = NULL, sheet = NULL, formulaAsFormula = FALSE)
+> read.ods(file = NULL, sheet = NULL, formulaAsFormula = FALSE)
 
 There are several arguments you can use with this command, find a more detailed walkthrough online here: \texttt{https://cran.r-project.org/web/packages/readODS/readODS.pdf}
 
