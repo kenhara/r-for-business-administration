@@ -35,7 +35,20 @@ While installation is fairly simple, it does require some attention to detail to
  \item Click on your operating system and follow the appropriate directions.
 \end{enumerate}
 
-R is part of many GNU/Linux distributions, you should check with your GNU/Linux package management system in addition to the link above. 
+R is part of many GNU/Linux distributions, you should check with your GNU/Linux package management system in addition to the link above.
+
+\section{Installing Sample Datasets}
+R has an included package with sample datasets that are used throughout this work to demonstrate concepts and applications for R. This work will teach you various techniques using this data, that you can then apply to your own data.
+
+To load a sample dataset, for example named foobar, enter the following command in R Console:
+
+data(foobar)
+
+You could also enter:
+
+data("foobar")
+
+Note that these are case sensitive.\foonote{For more information on how the data command works, visit: \texttt{https://stat.ethz.ch/R-manual/R-devel/library/utils/html/data.html}.}
 
 \subsection{Installing R Commander}
 \begin{enumerate}
@@ -50,11 +63,11 @@ install.packages("Rcmdr", dependencies = TRUE)
  \item Depending on your connection speed, the installation may take a while. Be patient and wait until you see the prompt again before you do anything.
  \end{enumerate}
  
-\subsection{Starting R Commander}
-If R is not already open, open it by clicking on its icon or through a terminal emulator. To open R Commander, at the prompt enter the following command:
+ \subsection{Starting R Commander}
+ If R is not already open, open it by clicking on its icon or through a terminal emulator. To open R Commander, at the prompt enter the following command:
 
-library(Rcmdr)
+ library(Rcmdr)
 
-You should see a large new window pop up, labeled R Commander.\footnote{Find detailed installation instructions online: \texttt{http://socserv.mcmaster.ca/jfox/Misc/Rcmdr/installation-notes.html}} You are now ready to analyze your data with R Commander. If you close this window while R is still open, you can start R Commander again by entering the command Commander() in R Console. Entering library(Rcmdr) in this situation will not work unless you close R and open it again.
+ You should see a large new window pop up, labeled R Commander.\footnote{Find detailed installation instructions online: \texttt{http://socserv.mcmaster.ca/jfox/Misc/Rcmdr/installation-notes.html}} You are now ready to analyze your data with R Commander. If you close this window while R is still open, you can start R Commander again by entering the command Commander() in R Console. Entering library(Rcmdr) in this situation will not work unless you close R and open it again.
 
 Congratulations! Now let's get to work.
