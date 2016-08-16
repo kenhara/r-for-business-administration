@@ -11,7 +11,7 @@
 %
 
 \section{Types of Surveys}
-Surveys are a valuable way to glean insights from stakeholders about your organization's past, present, and future performance. There are many groups you could survey, below is an alphabetized list of examples that may be relevant for your organization:
+Surveys are a valuable way to learn stakeholders' perceptions of your organization's past, present, and future performance. Below are examples of survey groups that may be relevant for your organization:
 
 \begin{itemize}
  \item Advisors
@@ -27,10 +27,12 @@ Surveys are a valuable way to glean insights from stakeholders about your organi
  \item Tradeshow Attendees
 \end{itemize}
 
-Let's try some exercises using categorical data that can be collected through surveys. 
+Let's try exercises using categorical data that could be collected through surveys. 
 
 \section{Proportion Tests}
 Use proportion tests to compare the proportion or mean from one group to a specified value. These will generate a p-value that can be used to evaluate the statistical significance of the comparison.\footnote{Learn more at: \texttt{https://stat.ethz.ch/R-manual/R-devel/library/stats/html/prop.test.html}.}
+
+The exercises in this section will use the "warpbreaks" dataset (The Number of Breaks in Yarn during Weaving) that is included with R. Load this data set into R following the instructions outlined in the Installation section of this work.
 
 \subsection{One Sample Proportion Test}
 prop.test(<count>, <total>)
@@ -53,4 +55,8 @@ sample estimates:
 0.8758465 0.9663121 
 
 \section{Generating Metadata from Open Responses}
-It is possible to create metadata from open-ended responses in survey questions. For example, say a survey asked customers if there is anything your organization could do to better serve them in the future. Have someone from your organization review the responses, generate a list based on topics submitted by customers, then tally the count each time on appears in the customer responses. This new set of data can now be leveraged in proportion tests or other testing methods.
+It is possible to create metadata from open-ended responses in survey questions that you evaluate through statistical techniques.
+
+For example, say a survey asked customers if there is anything your organization could do to better serve them in the future. Have someone from your organization review the responses, generate a list based on topics submitted by customers. 
+
+Next, count each time on appears in the customer responses. This can be done manually or through a formula in spreadsheet software like LibreOffice Calc or Gnumeric.\footnote{Learn more about these projects at \texttt{https://www.libreoffice.org/} and \texttt{http://gnumeric.org/}} This new set of metadata can now be leveraged in proportion tests or other testing methods.
