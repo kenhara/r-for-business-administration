@@ -36,7 +36,50 @@ Averages and quartiles are a simple way to capture a snapshot of the data you ha
 
 The exercises in this section will use the "warpbreaks" dataset (The Number of Breaks in Yarn during Weaving) that is included with R. Load this data set into R following the instructions outlined in the Installation section of this work.
 
+First, view the data by entering the following command:
 
+print(warpbreaks)
+
+Or, click View data set in R-Commander in the center of the user interface window.
+
+This yields the following results:
+
+% copy/paste results here
+
+Consider the context. The dataset includes three variables:
+
+\begin{enumerate}
+ \item Breaks - The number of reported breaks for each sample of yarn.
+ \item Wool - The type of wool for each sample of yarn. A categorial variable, either A or B.
+ \item Tension - The level of tension for each sample of yard. A categorical variable, either L (low), M (medium), or H (high).
+\end{enumerate}
+
+Assume further that yarn breaking during weaving is problematic. In other words, the higher the number in the Breaks column for each row, the worse that sample of yarn has performed. 
+
+Second, calculate summary statistics by entering the following command:
+
+summary(warpbreaks)
+
+Or, select in R-Commander by going to Statistics > Summaries > Active Dataset.
+
+This yields the following results:
+
+% copy/paste results here
+
+What is the significance of these results? Let's break them down one-by-one:
+
+\begin{itemize}
+ \item Min. - The minimum data point in the dataset. For column "breaks" this number is 10. In other words, of the surveyed samples of yarn, the lowest number of observed breaks in the dataset is 10. Stated differently, the best performing yarn had 10 breaks.
+ \item 1st Qu. - The first quartile of data in the dataset. For column "breaks" this number is 18.25. In other words, of the surveyed samples of yarn, the bottom quarter of yarn surveyed had 18.25 breaks.
+ \item Median - The median datapoint in the dataset. For column "breaks" this number is 26. In other words, of the surveyed samples of yarn, the middle data point is 26. This is calculated by cross-secting the data to the middle and selecting the single point, or adding the two middle points and dividing by two if the dataset has an even number. Median calculations are especially valuable for datasets that have outliers that may be skewing mean averages (more on this below).
+ \item Mean - The mean datapoint for the dataset. For column "breaks" this number is 28.15. This is calculated by summing all of the data points and dividing by the total number (or count) of data points. Mean is what most people are referring to when they use the term average, and is the most common form of average used.
+ \item 3rd Qu. - The third quartile of data in the dataset. For column "breaks" this number is 34. In other words, of the surveyed samples of yarn, the top quarter of yarn surveyed had 34 breaks.
+ \item Max.
+\end{itemize}
+
+What else can we conclude from summary statistics of the "breaks" column? The mean is larger than the median, indicating a possible skew in the data towards the samples of yarn with higher numbers of breaks.
+
+There are two other columns of summary statistics calculated by R: wool and tension. This provides a count summary of these categorical variables. Note that the dataset includes an even number of both types of wool (27 of both A and B). The dataset also includes an even number of all three levels of tension (18 Low, Medium, and High).
 
 \section{Proportion Tests}
 Use proportion tests to compare the proportion or mean from one group to a specified value. These will generate a p-value that can be used to evaluate the statistical significance of the comparison.\footnote{Learn more at: \texttt{https://stat.ethz.ch/R-manual/R-devel/library/stats/html/prop.test.html}.}
