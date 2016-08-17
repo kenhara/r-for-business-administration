@@ -46,7 +46,15 @@ This yields the following results:
 
 % copy/paste results here
 
-Consider the context. The dataset includes three variables:
+This is a long dataset, let's understand the number we are dealing with by entering the following command:
+
+nrow(warpbreaks)
+
+This yields the following results:
+
+[1] 54
+
+Meaning there are 54 rows in the dataset, or 54 samples of yarn in consideration. Consider the context. The dataset includes three variables, shown as column headers\footnote{Beyond looking at column headers, recall that you can have R return the variable names by entering: names(warpbreaks)}:
 
 \begin{enumerate}
  \item Breaks - The number of reported breaks for each sample of yarn.
