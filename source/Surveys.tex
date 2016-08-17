@@ -91,11 +91,13 @@ Use proportion tests to compare the proportion or mean from one group to a speci
 The exercises in this section will use the "warpbreaks" dataset (The Number of Breaks in Yarn during Weaving) that is included with R. Load this data set into R following the instructions outlined in the Installation section of this work.
 
 \subsection{One Sample Proportion Test}
+% This is temporary, crufty data that needs to be re-written
 prop.test(<count>, <total>)
 prop.test(384,5000)
 prop.test(384, 5000, conf.level=0.95)
 
 \subsection{Two Sample Proportion Test}
+% This is temporary, crufty data that needs to be re-written
 prop.test(x = c(388, 545), n = c(443, 564), correct = FALSE)
 
 2-sample test for equality of proportions without continuity
@@ -111,8 +113,9 @@ sample estimates:
 0.8758465 0.9663121 
 
 \section{Generating Metadata from Open Responses}
+% Section is incomplete, needs a screen shot to demonstrate how
 It is possible to create metadata from open-ended responses in survey questions that you evaluate through statistical techniques.
 
-For example, say a survey asked customers if there is anything your organization could do to better serve them in the future. Have someone from your organization review the responses, generate a list based on topics submitted by customers. 
+For example, say a survey asked customers if there is anything your organization could do to better serve them in the future. Have someone from your organization review the responses and generate a list based on topics submitted by customers. 
 
 Next, count each time on appears in the customer responses. This can be done manually or through a formula in spreadsheet software like LibreOffice Calc or Gnumeric.\footnote{Learn more about these projects at \texttt{https://www.libreoffice.org/} and \texttt{http://gnumeric.org/}} This new set of metadata can now be leveraged in proportion tests or other testing methods.
