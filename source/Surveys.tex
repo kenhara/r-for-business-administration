@@ -11,13 +11,14 @@
 %
 
 \section{Types of Surveys}
-Surveys are a valuable way to learn stakeholders' perceptions of your organization's past, present, and future performance. Below are examples of survey groups that may be relevant for your organization:
+Surveys are a valuable way to learn stakeholders' perceptions of your organization's past, present, and future performance. Below are examples of survey recipients that may be relevant for your organization:
 
 \begin{itemize}
  \item Advisors
  \item Channel Partners
  \item Customers
  \item Developers
+ \item Educators
  \item Employees
  \item Journalists
  \item Investors
@@ -32,13 +33,13 @@ Let's try exercises using data that could be collected through surveys.
 \section{Summarizing Data}
 
 \subsection{Averages and Quartiles}
-Averages and quartiles are a simple way to capture a snapshot of the data you have collected. Recall there are two types of data (continuous and categorical), so R will generate two types of sets of summary statistics.
+Averages and quartiles are a basic way to capture a snapshot of the data you have collected. Recall there are two types of data (continuous and categorical), so R will generate two types of sets of summary statistics.
 
 The exercises in this section will use the "warpbreaks" dataset (The Number of Breaks in Yarn during Weaving) that is included with R. Load this data set into R following the instructions outlined in the Installation section of this work.
 
 First, view the data by entering the following command:
 
-print(warpbreaks)
+\texttt{print(warpbreaks)}
 
 Or, click View data set in R-Commander in the center of the user interface window.
 
@@ -48,7 +49,7 @@ This yields the following results:
 
 This is a long dataset, let's understand the number we are dealing with by entering the following command:
 
-nrow(warpbreaks)
+\texttt{nrow(warpbreaks)}
 
 This yields the following results:
 
@@ -66,7 +67,7 @@ Assume further that yarn breaking during weaving is problematic. In other words,
 
 Second, calculate summary statistics by entering the following command:
 
-summary(warpbreaks)
+\texttt{summary(warpbreaks)}
 
 Or, select in R-Commander by going to Statistics > Summaries > Active Dataset.
 
@@ -92,33 +93,6 @@ There are two other columns of summary statistics calculated by R: wool and tens
 There is a third less common measure of average called mode\footnote{In R, mode is more importantly an object characteristic in indicating how the object is stored in memory (e.g. as a number, as a character string, as a function).}, the value that has the highest number of occurrences in the dataset. Calculating mode takes several steps, outlined below.
 
 % Fill this out later
-
-\section{Proportion Tests}
-Use proportion tests to compare the proportion or mean from one group to a specified value. These will generate a p-value that can be used to evaluate the statistical significance of the comparison.\footnote{Learn more at: \texttt{https://stat.ethz.ch/R-manual/R-devel/library/stats/html/prop.test.html}.}
-
-The exercises in this section will use the "warpbreaks" dataset (The Number of Breaks in Yarn during Weaving) that is included with R. Load this data set into R following the instructions outlined in the Installation section of this work.
-
-\subsection{One Sample Proportion Test}
-% This is temporary, crufty data that needs to be re-written
-prop.test(<count>, <total>)
-prop.test(384,5000)
-prop.test(384, 5000, conf.level=0.95)
-
-\subsection{Two Sample Proportion Test}
-% This is temporary, crufty data that needs to be re-written
-prop.test(x = c(388, 545), n = c(443, 564), correct = FALSE)
-
-2-sample test for equality of proportions without continuity
-        correction
-
-data:  c(388, 545) out of c(443, 564)
-X-squared = 29.824, df = 1, p-value = 4.731e-08
-alternative hypothesis: two.sided
-95 percent confidence interval:
- -0.12459255 -0.05633856
-sample estimates:
-   prop 1    prop 2 
-0.8758465 0.9663121 
 
 \section{Generating Metadata from Open Responses}
 % Section is incomplete, needs a screen shot to demonstrate how
