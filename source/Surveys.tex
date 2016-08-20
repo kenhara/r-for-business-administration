@@ -10,7 +10,7 @@
 % International Public License (CC BY-SA 4.0)
 %
 
-\section{Types of Surveys}
+\section{Survey Recipients}
 Surveys are a valuable way to learn stakeholders' perceptions of your organization's past, present, and future performance. Below are examples of survey recipients that may be relevant for your organization:
 
 \begin{itemize}
@@ -30,22 +30,30 @@ Surveys are a valuable way to learn stakeholders' perceptions of your organizati
 
 Let's try exercises using data that could be collected through surveys.
 
-\section{Summarizing Data}
-
-\subsection{Averages and Quartiles}
-Averages and quartiles are a basic way to capture a snapshot of the data you have collected. Recall there are two types of data (continuous and categorical), so R will generate two types of sets of summary statistics.
-
+\section{Viewing Data}
 The exercises in this section will use the "warpbreaks" dataset (The Number of Breaks in Yarn during Weaving) that is included with R. Load this data set into R following the instructions outlined in the Installation section of this work.
 
-First, view the data by entering the following command:
+First, view the data by entering the following command in R Script or R Console:
 
 \texttt{print(warpbreaks)}
+
+This yields the following results:
+
+\begin{figure}[h!]
+\includegraphics[keepaspectratio=true,height=1.10\textheight,width=1.00\textwidth,angle=0]{print_warpbreaks.png}
+ \caption{warpbreaks dataset via R-Commander R Script}
+ \label{fig:printwarpbreaks}
+\end{figure}
 
 Or, click View data set in R-Commander in the center of the user interface window.
 
 This yields the following results:
 
-% copy/paste results here
+\begin{figure}[h!]
+\includegraphics[keepaspectratio=true,height=1.10\textheight,width=1.00\textwidth,angle=0]{view-data-set_warpbreaks.png}
+ \caption{warpbreaks dataset via R-Commander GUI}
+ \label{fig:viewdatasetwarpbreaks}
+\end{figure}
 
 This is a long dataset, let's understand the number we are dealing with by entering the following command:
 
@@ -65,15 +73,22 @@ Meaning there are 54 rows in the dataset, or 54 samples of yarn in consideration
 
 Assume further that yarn breaking during weaving is problematic. In other words, the higher the number in the Breaks column for each row, the worse that sample of yarn has performed. 
 
-Second, calculate summary statistics by entering the following command:
+\subsection{Averages and Quartiles}
+Averages and quartiles are a basic way to capture a snapshot of the data you have collected. Recall there are two types of data (continuous and categorical), so R will generate two types of sets of summary statistics.
+
+Calculate summary statistics by entering the following command:
 
 \texttt{summary(warpbreaks)}
 
-Or, select in R-Commander by going to Statistics > Summaries > Active Dataset.
+Or, select in R-Commander by going to Statistics > Summaries > Active Dataset. Either way, the result will be generated in the Output window in R-Commander.
 
 This yields the following results:
 
-% copy/paste results here
+\begin{figure}[h!]
+\includegraphics[keepaspectratio=true,height=1.10\textheight,width=1.00\textwidth,angle=0]{summary_warpbreaks.png}
+ \caption{warpbreaks dataset summary via R-Commander R Script}
+ \label{fig:summarywarpbreaks}
+\end{figure}
 
 What is the significance of these results? Let's break them down one-by-one:
 
@@ -90,7 +105,7 @@ What else can we conclude from summary statistics of the "breaks" column? The me
 
 There are two other columns of summary statistics calculated by R: wool and tension. This provides a count summary of these categorical variables. Note that the dataset includes an even number of both types of wool (27 of both A and B). The dataset also includes an even number of all three levels of tension (18 Low, Medium, and High).
 
-There is a third less common measure of average called mode\footnote{In R, mode is more importantly an object characteristic in indicating how the object is stored in memory (e.g. as a number, as a character string, as a function).}, the value that has the highest number of occurrences in the dataset. Calculating mode takes several steps, outlined below.
+There is a third less common measure of average called mode\footnote{In R, mode is more importantly an object characteristic in indicating how the object is stored in memory (e.g. as a number, as a character string, as a function).}, the value that has the highest number of occurrences in the dataset. Calculating mode takes several steps and is not outlined at this time.
 
 % Fill this out later
 
