@@ -28,9 +28,13 @@ Let's try exercises using data that could be selected for its business value
 in forecasting.
 
 \section{Viewing Data}
-The exercises in this section will use the "freeny" dataset (Quarterly Revenue and Explanatory Variable Data for Freeny's) that is included with R. Load this data set into R following the instructions outlined in the Installation section of this work.
+The exercises in this section will use the "freeny" dataset (Quarterly Revenue 
+and Explanatory Variable Data for Freeny's) that is included with R. Load this 
+data set into R following the instructions outlined in the Installation section
+ of this work.
 
-First, view the data by entering the following command in R Script or R Console:
+First, view the data by entering the following command in R Script or R 
+Console:
 
 \texttt{print(freeny)}
 
@@ -42,7 +46,8 @@ This yields the following results:
  \label{fig:print_freeny}
 \end{figure}
 
-Or, click View data set in R-Commander in the center of the user interface window.
+Or, click View data set in R-Commander in the center of the user interface 
+window.
 
 This yields the following results:
 
@@ -67,12 +72,15 @@ business data. What other variables are included? in the dataset? Enter:
 \texttt{names(freeny)}
 
 \begin{enumerate}
- \item Breaks - The number of reported breaks for each sample of yarn.
- \item Wool - The type of wool for each sample of yarn. A categorial variable, either A or B.
- \item Tension - The level of tension for each sample of yard. A categorical variable, either L (low), M (medium), or H (high).
+ \item y - 
+ \item lag.quarterly.revenue -  
+ \item price.index - 
+ \item income.level - 
+ \item market.potential - 
 \end{enumerate}
 
-Assume further that yarn breaking during weaving is problematic. In other words, the higher the number in the Breaks column for each row, the worse that sample of yarn has performed. 
+Since currency is not noted, we can assume that all these values are in the 
+same currency, making that one less thing to worry about during our analysis.
 
 \subsection{Averages and Quartiles}
 Averages and quartiles are a basic way to capture a snapshot of the data you have collected. Recall there are two types of data (continuous and categorical), so R will generate two types of sets of summary statistics.
