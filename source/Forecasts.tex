@@ -37,9 +37,9 @@ First, view the data by entering the following command in R Script or R Console:
 This yields the following results:
 
 \begin{figure}[h!]
-\includegraphics[keepaspectratio=true,height=1.10\textheight,width=1.00\textwidth,angle=0]{print_warpbreaks.png}
- \caption{warpbreaks dataset via R-Commander R Script}
- \label{fig:print_warpbreaks}
+\includegraphics[keepaspectratio=true,height=1.10\textheight,width=1.00\textwidth,angle=0]{print_freeny.png}
+ \caption{freeny dataset via R-Commander R Script}
+ \label{fig:print_freeny}
 \end{figure}
 
 Or, click View data set in R-Commander in the center of the user interface window.
@@ -47,20 +47,24 @@ Or, click View data set in R-Commander in the center of the user interface windo
 This yields the following results:
 
 \begin{figure}[h!]
-\includegraphics[keepaspectratio=true,height=1.10\textheight,width=1.00\textwidth,angle=0]{view-data-set_warpbreaks.png}
- \caption{warpbreaks dataset via R-Commander GUI}
- \label{fig:view-data-set_warpbreaks}
+\includegraphics[keepaspectratio=true,height=1.10\textheight,width=1.00\textwidth,angle=0]{view-data-set_freeny.png}
+ \caption{freeny dataset via R-Commander GUI}
+ \label{fig:view-data-set_freeny}
 \end{figure}
 
-This is a long dataset, let's understand the number we are dealing with by entering the following command:
+To determine how many rows we are dealing with, enter the following command:
 
-\texttt{nrow(warpbreaks)}
+\texttt{nrow(freeny)}
 
 This yields the following results:
 
-[1] 54
+[1] 39
 
-Meaning there are 54 rows in the dataset, or 54 samples of yarn in consideration. Consider the context. The dataset includes three variables, shown as column headers\footnote{Beyond looking at column headers, recall that you can have R return the variable names by entering: names(warpbreaks)}:
+Meaning there are 39 rows in the dataset. Recall that this is quarterly data. 
+39 divided by 4 equals 9.75, meaning this is nine years and three quarters of 
+business data. What other variables are included? in the dataset? Enter: 
+
+\texttt{names(freeny)}
 
 \begin{enumerate}
  \item Breaks - The number of reported breaks for each sample of yarn.
