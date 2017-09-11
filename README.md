@@ -11,6 +11,8 @@ LaTeX Memoir hosted on GitHub.
 
 This notice will be removed when 1 and 2 are complete.
 
+UPDATE: Adding build instructions that will make this easier to replicate. 
+
 # R for Business Administration
 This work strives to be a practical guide to using R for business 
 administration. While this work contains information about using statistics 
