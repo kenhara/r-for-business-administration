@@ -2,15 +2,18 @@
 
 Before starting, ensure you have LaTeX installed (see instructions below). 
 
-1 Using the command line, go to the source directory
+1 Using the command line, go to the source directory. 
 
 2 Using the command line, enter: 
 
 > xelatex RFBA.tex
 
-Due to currently unresolved build issues, repeat this command: 
+Due to currently unresolved build issues^, repeat this command: 
 
 > xelatex RFBA.tex
+
+^ Specifically, the Table of Contents and List of Figures do not generate. 
+Repeat this command until they successfully generate in your PDF document. 
 
 3 A newly created PDF should now be available in the source directory. 
 
